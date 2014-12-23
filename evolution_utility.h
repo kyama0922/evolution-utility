@@ -32,4 +32,7 @@
 //コレクション
 #include "etc\evolution_collection.h"
 
+//コレクション
+#include "etc\evolution_binary_search_correction.h"
+
 #endif //!__EVOLUTION_UTILITY_H__
