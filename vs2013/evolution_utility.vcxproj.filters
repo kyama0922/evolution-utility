@@ -141,6 +141,9 @@
     <ClCompile Include="..\file\zlib\compress.c">
       <Filter>ソース ファイル\file\zlib</Filter>
     </ClCompile>
+    <ClCompile Include="..\etc\evolution_binary_search_correction.cpp">
+      <Filter>ソース ファイル\etc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\evolution_utility.h">
@@ -214,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="..\file\zlib\inffixed.h">
       <Filter>ヘッダー ファイル\file\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\etc\evolution_binary_search_correction.h">
+      <Filter>ヘッダー ファイル\etc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
