@@ -12,10 +12,12 @@ namespace EVOLUTION{
         class Vector4;
         class Matrix;
 
+#if defined(WIN32) | defined(WIN64)
+        __declspec(align(16))
+#endif
         class Quaternion :public float4
         {
         public:
-
             EVOLUTION_INLINE Quaternion(){}
             EVOLUTION_INLINE Quaternion(const Vector3& vec){ this->x = vec.x; this->y = vec.y; this->z = vec.z; this->w = 0.0f; }
             EVOLUTION_INLINE Quaternion(const Vector3& axis, f32 r){ this->SetR(axis, r); }

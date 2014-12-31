@@ -11,12 +11,7 @@ using namespace EVOLUTION::MATH;
 Matrix::Matrix(){
     memset(&this->_11, 0, sizeof(Matrix));
 }
-Matrix::Matrix(MatrixFloat16 f4x4){
-    this->_11 = f4x4._11; this->_12 = f4x4._12; this->_13 = f4x4._13; this->_14 = f4x4._14;
-    this->_21 = f4x4._21; this->_22 = f4x4._22; this->_23 = f4x4._23; this->_24 = f4x4._24;
-    this->_31 = f4x4._31; this->_32 = f4x4._32; this->_33 = f4x4._33; this->_34 = f4x4._34;
-    this->_41 = f4x4._41; this->_42 = f4x4._42; this->_43 = f4x4._43; this->_44 = f4x4._44;
-}
+
 Matrix::Matrix(
     f32 m11, f32 m12, f32 m13, f32 m14,
     f32 m21, f32 m22, f32 m23, f32 m24,

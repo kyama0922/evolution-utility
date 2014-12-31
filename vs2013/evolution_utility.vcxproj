@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\etc\evolution_binary_search_correction.cpp" />
+    <ClCompile Include="..\etc\evolution_binary_search_collection.cpp" />
     <ClCompile Include="..\etc\evolution_collection.cpp" />
     <ClCompile Include="..\file\evolution_zip_loader.cpp" />
     <ClCompile Include="..\file\zlib\adler32.c" />
@@ -53,7 +53,7 @@
     <ClCompile Include="..\math\evolution_vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\etc\evolution_binary_search_correction.h" />
+    <ClInclude Include="..\etc\evolution_binary_search_collection.h" />
     <ClInclude Include="..\etc\evolution_collection.h" />
     <ClInclude Include="..\etc\evolution_color.h" />
     <ClInclude Include="..\evolution_utility.h" />

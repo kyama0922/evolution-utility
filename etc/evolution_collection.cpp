@@ -9,54 +9,56 @@ Collection::Collection(){
 }
 
 Collection::~Collection(){
-    for (std::map<u32, IUnknown*>::iterator it = this->m_collection.begin(); it != this->m_collection.end(); it++)
+    for (s32 i = 0; i < this->m_collection.GetUseTableCount(); i++)
     {
-        it->second->Release();
+        MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.GetContainer(i);
+        if (collector){
+            collector->val->Release();
+        }
     }
-    std::map<u32, IUnknown*>().swap(this->m_collection);
 }
 
 //アイテムの取得します。
 //※取得できなかった場合はnullを返す
 IUnknown* Collection::QueryItem(u32 hash){
-    std::map<u32, IUnknown*>::iterator it = this->m_collection.find(hash);
-    if (this->m_collection.end() == it)
+    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    if (collector == nullptr)
     {
         return nullptr;
     }
-    it->second->AddRef();
-    return it->second;
+    collector->val->AddRef();
+    return collector->val;
 }
 
 //アイテムの追加
 //※参照カウンタが1増加
 void Collection::InsertItem(u32 hash, IUnknown* item){
     item->AddRef();
-    std::map<u32, IUnknown*>::iterator it = this->m_collection.find(hash);
-    if (this->m_collection.end() == it)
+    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    if (collector == nullptr)
     {
-        this->m_collection[hash] = item;
+        this->m_collection.Insert(hash, item);
     }
 }
 
 //アイテムを開放します。
 void Collection::ReleaseItem(u32 hash){
-    std::map<u32, IUnknown*>::iterator it = this->m_collection.find(hash);
-    if (this->m_collection.end() == it)
+    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    if (collector == nullptr)
     {
         return;
     }
-    u32 count = it->second->Release();
+    u32 count = collector->val->Release();
     if (count == 0)
     {
-        this->m_collection.erase(it);
+        this->m_collection.Delete(collector->key);
     }
 }
 
 //アイテムの検索
 bool Collection::Find(u32 hash){
-    std::map<u32, IUnknown*>::iterator it = this->m_collection.find(hash);
-    if (this->m_collection.end() == it)
+    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    if (collector == nullptr)
     {
         return false;
     }
@@ -64,9 +66,12 @@ bool Collection::Find(u32 hash){
 }
 
 void Collection::ReleaseAll(){
-    for (std::map<u32, IUnknown*>::iterator it = this->m_collection.begin(); it != this->m_collection.end(); it++)
+    for (s32 i = 0; i < this->m_collection.GetUseTableCount(); i++)
     {
-        it->second->Release();
+        MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.GetContainer(i);
+        if (collector){
+            collector->val->Release();
+        }
     }
-    std::map<u32, IUnknown*>().swap(this->m_collection);
+    MapCorrection<IUnknown*>().Swap(this->m_collection);
 }

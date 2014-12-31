@@ -2,7 +2,7 @@
 #define __EVOLUTION_COLLECTION_H__
 
 #include <evolution_type.h>
-#include <map>
+#include "evolution_binary_search_collection.h"
 
 namespace EVOLUTION{
     namespace UTILITY{
@@ -13,7 +13,7 @@ namespace EVOLUTION{
         //---------------------------------------------------------------------------
         class Collection{
         private:
-            std::map<u32, IUnknown*> m_collection;
+            MapCorrection<IUnknown*> m_collection;
         public:
             Collection();
             ~Collection();
