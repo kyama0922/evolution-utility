@@ -11,6 +11,9 @@ namespace EVOLUTION{
         class Quaternion;
         class Matrix;
 
+#if defined(WIN32) | defined(WIN64)
+        __declspec(align(8))
+#endif
         typedef struct{
             union{
                 f32 m[2];
