@@ -1,11 +1,11 @@
-﻿#include "evolution_binary_search_correction.h"
+﻿#include "evolution_binary_search_collection.h"
 
 using namespace EVOLUTION;
 using namespace EVOLUTION::UTILITY;
 
 
 //データインデックスの検索
-s32 BinarySearchCorrection::FindIndex(u32 key, s32* last_key)const{
+s32 BinarySearchCollection::FindIndex(u32 key, s32* last_key)const{
     s32 i = -1;
     s32 min = 0, max = this->m_use_container_count;
     do{
@@ -31,7 +31,7 @@ s32 BinarySearchCorrection::FindIndex(u32 key, s32* last_key)const{
     return -1;
 }
 //データを右側にスライド
-void BinarySearchCorrection::RightSlideData(s32 start_index, s32 slide_count){
+void BinarySearchCollection::RightSlideData(s32 start_index, s32 slide_count){
     for (s32 i = this->m_use_container_count + slide_count - 1; start_index < i; i--)
     {
         this->mp_container_table[i].key = this->mp_container_table[i - slide_count].key;
@@ -39,7 +39,7 @@ void BinarySearchCorrection::RightSlideData(s32 start_index, s32 slide_count){
     }
 }
 //データを左側にスライド
-void BinarySearchCorrection::LeftSlideData(s32 start_index, s32 slide_count){
+void BinarySearchCollection::LeftSlideData(s32 start_index, s32 slide_count){
     for (s32 i = start_index, count = this->m_use_container_count - start_index; i < this->m_use_container_count; i++)
     {
         this->mp_container_table[i].key = this->mp_container_table[i + slide_count].key;
@@ -48,16 +48,16 @@ void BinarySearchCorrection::LeftSlideData(s32 start_index, s32 slide_count){
 }
 
 
-BinarySearchCorrection::BinarySearchCorrection(s32 table_count) :m_max_container_count(0), m_use_container_count(0), mp_container_table(nullptr){
+BinarySearchCollection::BinarySearchCollection(s32 table_count) :m_max_container_count(0), m_use_container_count(0), mp_container_table(nullptr){
     this->CreateTable(table_count);
 }
 
-BinarySearchCorrection::~BinarySearchCorrection(){
+BinarySearchCollection::~BinarySearchCollection(){
     EVOLUTION_DELETE_ARRAY(mp_container_table);
 }
 
 //データのコピー
-void BinarySearchCorrection::CopyTable(Container* dest, const Container* src, s32 count){
+void BinarySearchCollection::CopyTable(Container* dest, const Container* src, s32 count){
     for (s32 i = 0; i < count; i++)
     {
         dest[i].key = src[i].key;
@@ -66,13 +66,13 @@ void BinarySearchCorrection::CopyTable(Container* dest, const Container* src, s3
 }
 
 //データテーブルの作成
-void BinarySearchCorrection::CreateTable(s32 table_count){
+void BinarySearchCollection::CreateTable(s32 table_count){
     m_max_container_count = table_count;
     mp_container_table = NEW Container[m_max_container_count];
 }
 
 //データテーブルの再確保
-void BinarySearchCorrection::ReCreateTable(s32 table_count){
+void BinarySearchCollection::ReCreateTable(s32 table_count){
     if (table_count < this->m_use_container_count)
     {
         return;
@@ -89,8 +89,11 @@ void BinarySearchCorrection::ReCreateTable(s32 table_count){
 }
 
 //テーブルの追加
-void BinarySearchCorrection::AddCreateTable(u32 magnification){
-    m_max_container_count *= magnification;
+void BinarySearchCollection::AddTable(u32 magnification){
+    if (m_max_container_count == 0)
+    {
+        m_max_container_count = 2 * magnification;
+    }
     Container* temp = NEW Container[m_max_container_count];
 
     this->CopyTable(temp, this->mp_container_table, m_use_container_count);
@@ -103,7 +106,7 @@ void BinarySearchCorrection::AddCreateTable(u32 magnification){
 }
 
 //中身をソートします。(基数ソート)
-void BinarySearchCorrection::Sort(){
+void BinarySearchCollection::Sort(){
     const u32 r = 0x80000000;
     const s32 n = m_use_container_count;
     s32 i, j, k;
@@ -148,10 +151,10 @@ void BinarySearchCorrection::Sort(){
 
 //ソートせずに高速にデータを挿入します。
 //データ挿入が終わり次第ソート関数を明示的に読んでください。
-void BinarySearchCorrection::InsertNotSort(u32 key, ptr_t val){
+void BinarySearchCollection::InsertNotSort(u32 key, ptr_t val){
     if (m_max_container_count - 1 < this->m_use_container_count)
     {
-        this->AddCreateTable();
+        this->AddTable();
     }
     this->mp_container_table[this->m_use_container_count].key = key;
     this->mp_container_table[this->m_use_container_count].val = val;
@@ -159,11 +162,11 @@ void BinarySearchCorrection::InsertNotSort(u32 key, ptr_t val){
 }
 
 //データを挿入
-void BinarySearchCorrection::Insert(u32 key, ptr_t val){
+void BinarySearchCollection::Insert(u32 key, ptr_t val){
     //追加用テーブルの確認
     if (m_max_container_count - 1 < this->m_use_container_count)
     {
-        this->AddCreateTable();
+        this->AddTable();
     }
 
     s32 last_index;
@@ -186,7 +189,7 @@ void BinarySearchCorrection::Insert(u32 key, ptr_t val){
 }
 
 //データの検索
-Container* BinarySearchCorrection::Find(u32 key)const{
+Container* BinarySearchCollection::Find(u32 key)const{
     s32 index = this->FindIndex(key, nullptr);
     if (index == -1)
     {
@@ -196,7 +199,7 @@ Container* BinarySearchCorrection::Find(u32 key)const{
 }
 
 //データを削除
-void BinarySearchCorrection::Delete(u32 key){
+void BinarySearchCollection::Delete(u32 key){
     s32 index = this->FindIndex(key, nullptr);
     if (index == -1)
     {
@@ -207,15 +210,32 @@ void BinarySearchCorrection::Delete(u32 key){
 }
 
 //現在のテーブル数を取得
-s32 BinarySearchCorrection::GetTableSize()const{
+s32 BinarySearchCollection::GetTableSize()const{
     return this->m_max_container_count;
 }
 //現在のテーブル使用数を取得
-s32 BinarySearchCorrection::GetUseTableCount()const{
+s32 BinarySearchCollection::GetUseTableCount()const{
     return this->m_use_container_count;
 }
 //データをTableから取得
-Container* BinarySearchCorrection::GetContainer(s32 index)const{
+Container* BinarySearchCollection::GetContainer(s32 index)const{
     return (index < this->m_use_container_count) ? &this->mp_container_table[index] : nullptr;
 }
 
+void BinarySearchCollection::Swap(BinarySearchCollection& src){
+    //データテーブルのスワップ
+    src.mp_container_table = (Container*)((ptr_t)src.mp_container_table ^ (ptr_t)this->mp_container_table);
+    this->mp_container_table = (Container*)((ptr_t)this->mp_container_table ^ (ptr_t)src.mp_container_table);
+    src.mp_container_table = (Container*)((ptr_t)src.mp_container_table ^ (ptr_t)this->mp_container_table);
+
+
+    //最大コレクション数のスワップ
+    src.m_max_container_count = src.m_max_container_count ^ this->m_max_container_count;
+    this->m_max_container_count = this->m_max_container_count ^ src.m_max_container_count;
+    src.m_max_container_count = src.m_max_container_count ^ this->m_max_container_count;
+
+    //使用数のスワップ
+    src.m_use_container_count = src.m_use_container_count ^ this->m_use_container_count;
+    this->m_use_container_count = this->m_use_container_count ^ src.m_use_container_count;
+    src.m_use_container_count = src.m_use_container_count ^ this->m_use_container_count;
+}

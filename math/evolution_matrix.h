@@ -12,6 +12,9 @@ namespace EVOLUTION{
         class Vector4;
         class Quaternion;
 
+#if defined(WIN32) | defined(WIN64)
+        __declspec(align(64))
+#endif
         typedef struct{
             union {
                 f32	m[4][4];
@@ -32,7 +35,6 @@ namespace EVOLUTION{
             * @brief コンストラクタ
             */
             Matrix();
-            Matrix(MatrixFloat16 f4x4);
             Matrix(
                 f32 m11, f32 m12, f32 m13, f32 m14,
                 f32 m21, f32 m22, f32 m23, f32 m24,
