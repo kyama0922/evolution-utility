@@ -11,6 +11,9 @@ namespace EVOLUTION{
         class Quaternion;
         class Matrix;
 
+#if defined(WIN32) | defined(WIN64)
+        __declspec(align(16))
+#endif
         typedef struct{
             union{
                 f32 m[3];
@@ -22,7 +25,7 @@ namespace EVOLUTION{
             };
         }float3;
 
-        class Vector3 :public	float3
+        class Vector3 :public float3
         {
         public:
             EVOLUTION_INLINE Vector3(){}
