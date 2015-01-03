@@ -13,7 +13,7 @@ namespace EVOLUTION{
         //---------------------------------------------------------------------------
         class Collection{
         private:
-            MapCorrection<IUnknown*> m_collection;
+            MapCollection<IUnknown*> m_collection;
         public:
             Collection();
             ~Collection();

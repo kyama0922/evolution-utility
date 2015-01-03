@@ -57,7 +57,7 @@ namespace EVOLUTION{
 
         template<class T>
         //typedef ptr_t T;
-        class MapCorrection{
+        class MapCollection{
         public:
             struct MapContainer{
                 u32 key;
@@ -67,11 +67,11 @@ namespace EVOLUTION{
             BinarySearchCollection* mp_collection;
         public:
 
-            MapCorrection(s32 table_count = 0) : mp_collection(nullptr){
+            MapCollection(s32 table_count = 0) : mp_collection(nullptr){
                 mp_collection = NEW BinarySearchCollection(table_count);
             }
 
-            ~MapCorrection(){
+            ~MapCollection(){
                 EVOLUTION_DELETE(mp_collection);
             }
 
@@ -126,7 +126,7 @@ namespace EVOLUTION{
             }
 
             //データを入れ替える
-            void Swap(MapCorrection& src){
+            void Swap(MapCollection& src){
                 src.mp_collection = (BinarySearchCollection*)((ptr_t)src.mp_collection ^ (ptr_t)this->mp_collection);
                 this->mp_collection = (BinarySearchCollection*)((ptr_t)this->mp_collection ^ (ptr_t)src.mp_collection);
                 src.mp_collection = (BinarySearchCollection*)((ptr_t)src.mp_collection ^ (ptr_t)this->mp_collection);
