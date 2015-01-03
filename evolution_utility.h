@@ -1,5 +1,5 @@
-#ifndef __EVOLUTION_UTILITY_H__
-#define __EVOLUTION_UTILITY_H__
+#ifndef __EVOLUTION_UTILITY__
+#define __EVOLUTION_UTILITY__
 
 //EVOLUTIONライブラリで扱う基本型情報のヘッダ
 #include <evolution.h>
