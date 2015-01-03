@@ -90,6 +90,7 @@ void BinarySearchCollection::ReCreateTable(s32 table_count){
 
 //テーブルの追加
 void BinarySearchCollection::AddTable(u32 magnification){
+    m_max_container_count *= magnification;
     if (m_max_container_count == 0)
     {
         m_max_container_count = 2 * magnification;

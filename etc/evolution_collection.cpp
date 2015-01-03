@@ -11,7 +11,7 @@ Collection::Collection(){
 Collection::~Collection(){
     for (s32 i = 0; i < this->m_collection.GetUseTableCount(); i++)
     {
-        MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.GetContainer(i);
+        MapCollection<IUnknown*>::MapContainer* collector = this->m_collection.GetContainer(i);
         if (collector){
             collector->val->Release();
         }
@@ -21,7 +21,7 @@ Collection::~Collection(){
 //アイテムの取得します。
 //※取得できなかった場合はnullを返す
 IUnknown* Collection::QueryItem(u32 hash){
-    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    MapCollection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
     if (collector == nullptr)
     {
         return nullptr;
@@ -34,7 +34,7 @@ IUnknown* Collection::QueryItem(u32 hash){
 //※参照カウンタが1増加
 void Collection::InsertItem(u32 hash, IUnknown* item){
     item->AddRef();
-    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    MapCollection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
     if (collector == nullptr)
     {
         this->m_collection.Insert(hash, item);
@@ -43,7 +43,7 @@ void Collection::InsertItem(u32 hash, IUnknown* item){
 
 //アイテムを開放します。
 void Collection::ReleaseItem(u32 hash){
-    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    MapCollection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
     if (collector == nullptr)
     {
         return;
@@ -57,7 +57,7 @@ void Collection::ReleaseItem(u32 hash){
 
 //アイテムの検索
 bool Collection::Find(u32 hash){
-    MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
+    MapCollection<IUnknown*>::MapContainer* collector = this->m_collection.Find(hash);
     if (collector == nullptr)
     {
         return false;
@@ -68,10 +68,10 @@ bool Collection::Find(u32 hash){
 void Collection::ReleaseAll(){
     for (s32 i = 0; i < this->m_collection.GetUseTableCount(); i++)
     {
-        MapCorrection<IUnknown*>::MapContainer* collector = this->m_collection.GetContainer(i);
+        MapCollection<IUnknown*>::MapContainer* collector = this->m_collection.GetContainer(i);
         if (collector){
             collector->val->Release();
         }
     }
-    MapCorrection<IUnknown*>().Swap(this->m_collection);
+    MapCollection<IUnknown*>().Swap(this->m_collection);
 }
