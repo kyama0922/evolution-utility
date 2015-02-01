@@ -4,7 +4,7 @@
 
 #include <evolution.h>
 #include <map>
-#include "zlib\zlib.h"
+#include "zlib/zlib.h"
 namespace EVOLUTION{
 
     namespace TEMPLATE{
@@ -16,65 +16,65 @@ namespace EVOLUTION{
 #pragma pack(push , 1)
         //Local file header
         struct LocalFileHeader{
-            //u32 local_file_header_signature;//Local file header ‚Å‚ ‚é‚±‚Æ‚ğ¦‚·ŒÅ’è’l 0x04034B50 = 0x50, 0x4B, 0x03, 0x04
-            u16 version_needed_to_extract;//“WŠJ‚É•K—v‚ÈZIP‚Ìƒo[ƒWƒ‡ƒ“
-            u16 general_purpose_bit_flag;//ƒIƒvƒVƒ‡ƒ“ƒtƒ‰ƒO
-            u16 compression_method;//ƒtƒ@ƒCƒ‹ˆ³k‚É—p‚¢‚½ƒAƒ‹ƒSƒŠƒYƒ€0 (–³ˆ³kƒtƒ@ƒCƒ‹)8 (ƒfƒtƒŒ[ƒgŒ`®)
-            u16 last_mod_file_time;//ƒ^ƒCƒ€ƒXƒ^ƒ“ƒv()
-            u16 last_mod_file_date;//ƒ^ƒCƒ€ƒXƒ^ƒ“ƒv(“ú•t)
-            u32 crc_32;//ƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^‚©‚çZo‚µ‚½ CRC-32 ‚Ì’l
-            u32 compressed_size;//ˆ³kŒã‚Ìƒf[ƒ^—ÊAFile data ‚ÌƒTƒCƒY–³ˆ³k‚È‚ç uncompressed size ƒtƒB[ƒ‹ƒh‚Æ“¯’l
-            u32 uncompressed_size;//ˆ³k‘O‚Ìƒf[ƒ^—Ê
-            u16 file_name_length;//file name ƒtƒB[ƒ‹ƒh‚ÌƒTƒCƒY
-            u16  extra_field_length;//extra field ƒtƒB[ƒ‹ƒh‚ÌƒTƒCƒY
-            char* file_name;//ƒtƒ@ƒCƒ‹–¼‚ğŠi”[‚·‚é—Ìˆæ
-            char* extra_field;//Šg’£ƒf[ƒ^‚ğŠi”[‚·‚é—Ìˆæ
+            //u32 local_file_header_signature;//Local file header ã§ã‚ã‚‹ã“ã¨ã‚’ç¤ºã™å›ºå®šå€¤ 0x04034B50 = 0x50, 0x4B, 0x03, 0x04
+            u16 version_needed_to_extract;//å±•é–‹ã«å¿…è¦ãªZIPã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
+            u16 general_purpose_bit_flag;//ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ•ãƒ©ã‚°
+            u16 compression_method;//ãƒ•ã‚¡ã‚¤ãƒ«åœ§ç¸®ã«ç”¨ã„ãŸã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ 0 (ç„¡åœ§ç¸®ãƒ•ã‚¡ã‚¤ãƒ«)8 (ãƒ‡ãƒ•ãƒ¬ãƒ¼ãƒˆå½¢å¼)
+            u16 last_mod_file_time;//ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—(æ™‚åˆ»)
+            u16 last_mod_file_date;//ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—(æ—¥ä»˜)
+            u32 crc_32;//ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ç®—å‡ºã—ãŸ CRC-32 ã®å€¤
+            u32 compressed_size;//åœ§ç¸®å¾Œã®ãƒ‡ãƒ¼ã‚¿é‡ã€File data ã®ã‚µã‚¤ã‚ºç„¡åœ§ç¸®ãªã‚‰ uncompressed size ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã¨åŒå€¤
+            u32 uncompressed_size;//åœ§ç¸®å‰ã®ãƒ‡ãƒ¼ã‚¿é‡
+            u16 file_name_length;//file name ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚µã‚¤ã‚º
+            u16  extra_field_length;//extra field ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚µã‚¤ã‚º
+            char* file_name;//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æ ¼ç´ã™ã‚‹é ˜åŸŸ
+            char* extra_field;//æ‹¡å¼µãƒ‡ãƒ¼ã‚¿ã‚’æ ¼ç´ã™ã‚‹é ˜åŸŸ
         };
 
         //Data descriptor signature
         struct DataDescriptorSignature{
-            //u32 data_descriptor_header_signature;//Data descriptor ‚Å‚ ‚é‚±‚Æ‚ğ¦‚·ŒÅ’è’l 0x08074B50 = 0x50, 0x4B, 0x07, 0x08
-            u32 crc_32;//ƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^‚©‚çZo‚µ‚½ CRC-32 ‚Ì’l
-            u32 compressed_size;//ˆ³kŒã‚Ìƒf[ƒ^—ÊA–³ˆ³k‚È‚ç uncompressed size ‚Æ“¯’l
-            u32 uncompressed_size;//ˆ³k‘O‚Ìƒf[ƒ^—Ê
+            //u32 data_descriptor_header_signature;//Data descriptor ã§ã‚ã‚‹ã“ã¨ã‚’ç¤ºã™å›ºå®šå€¤ 0x08074B50 = 0x50, 0x4B, 0x07, 0x08
+            u32 crc_32;//ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ç®—å‡ºã—ãŸ CRC-32 ã®å€¤
+            u32 compressed_size;//åœ§ç¸®å¾Œã®ãƒ‡ãƒ¼ã‚¿é‡ã€ç„¡åœ§ç¸®ãªã‚‰ uncompressed size ã¨åŒå€¤
+            u32 uncompressed_size;//åœ§ç¸®å‰ã®ãƒ‡ãƒ¼ã‚¿é‡
         };
 
         //Central directory header
         struct CentralDirectoryHeader{
-            //u32 central_file_header_signature;//Central directory header ‚Å‚ ‚é‚±‚Æ‚ğ¦‚·ŒÅ’è’l 0x02014B50 = 0x50, 0x4B, 0x01, 0x02
-            u8 version_made_lower_byte;//ƒAƒvƒŠ‚ªƒTƒ|[ƒg‚·‚éZIP‚Ìƒo[ƒWƒ‡ƒ“ 10 (ver.1.0) Ë–³ˆ³kƒtƒ@ƒCƒ‹ 20 (ver.2.0) ËƒtƒHƒ‹ƒ_AƒfƒtƒŒ[ƒgAƒpƒXƒ[ƒh•ÛŒì 45 (ver.4.5) ËZIP64
-            u8 version_made_upper_byte;//OS‚Ìí—Ş00 (MS-DOS) 03 (UNIX) 07 (Macintosh)
-            u16 version_needed_to_extract;//“WŠJ‚É•K—v‚ÈZIP‚Ìƒo[ƒWƒ‡ƒ“
-            u16 general_purpose_bit_flag;//ƒIƒvƒVƒ‡ƒ“ƒtƒ‰ƒO
-            u16 compression_method;//ƒtƒ@ƒCƒ‹ˆ³k‚É—p‚¢‚½ƒAƒ‹ƒSƒŠƒYƒ€
-            u16 last_mod_file_time;//ƒ^ƒCƒ€ƒXƒ^ƒ“ƒv()
-            u16 last_mod_file_date;//ƒ^ƒCƒ€ƒXƒ^ƒ“ƒv(“ú•t)
-            u32 crc_32;//ƒtƒ@ƒCƒ‹‚Ìƒf[ƒ^‚©‚çZo‚µ‚½ CRC-32 ‚Ì’l
-            u32 compressed_size;//ˆ³kŒã‚Ìƒf[ƒ^—ÊAFile data ‚ÌƒTƒCƒY–³ˆ³k‚È‚ç uncompressed size ƒtƒB[ƒ‹ƒh‚Æ“¯’l
-            u32 uncompressed_size;//ˆ³k‘O‚Ìƒf[ƒ^—Ê
-            u16 file_name_length;//file name ƒtƒB[ƒ‹ƒh‚ÌƒTƒCƒY
-            u16 extra_field_length;//extra field ƒtƒB[ƒ‹ƒh‚ÌƒTƒCƒY
-            u16 file_comment_length;//file_commentƒtƒB[ƒ‹ƒh‚ÌƒTƒCƒY
-            u16 disk_number_start;//‘Î‰‚·‚é Local file header ‚ªŠi”[‚³‚ê‚Ä‚¢‚éƒfƒBƒXƒN‚Ì”Ô†
-            u16 internal_file_attributes;//ƒf[ƒ^‚Ì‘®«(«¿‚ğ¦‚·)ƒrƒbƒgƒtƒ‰ƒO0 (ƒoƒCƒiƒŠƒf[ƒ^)1 (ASCIIAƒeƒLƒXƒgƒtƒ@ƒCƒ‹)
-            u32 external_file_attributes;//ƒtƒ@ƒCƒ‹‚Ì‘®«(“Ç‚İ‚İê—p‚Æ‚©‰B‚µƒtƒ@ƒCƒ‹‚Æ‚©)
-            u32 relative_offset_of_local_header;//‘Î‰‚·‚é Local file header ‚Ü‚Å‚ÌƒIƒtƒZƒbƒgZIPƒtƒ@ƒCƒ‹æ“ª‚©‚ç(ƒfƒBƒXƒN•ªŠ„‚Í‚»‚ÌƒfƒBƒXƒN‚Ìæ“ª‚©‚ç)‚ÌƒIƒtƒZƒbƒg
-            char* file_name;//ƒtƒ@ƒCƒ‹–¼‚ğŠi”[‚·‚é—Ìˆæ
-            char* extra_field;//Šg’£ƒf[ƒ^‚ğŠi”[‚·‚é—Ìˆæ
-            char* file_comment;//“–ŠYƒtƒ@ƒCƒ‹‚É‘Î‚µ‚Ä‚ÌƒRƒƒ“ƒg‚ğŠi”[‚·‚é—Ìˆæ
+            //u32 central_file_header_signature;//Central directory header ã§ã‚ã‚‹ã“ã¨ã‚’ç¤ºã™å›ºå®šå€¤ 0x02014B50 = 0x50, 0x4B, 0x01, 0x02
+            u8 version_made_lower_byte;//ã‚¢ãƒ—ãƒªãŒã‚µãƒãƒ¼ãƒˆã™ã‚‹ZIPã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ 10 (ver.1.0) â‡’ç„¡åœ§ç¸®ãƒ•ã‚¡ã‚¤ãƒ« 20 (ver.2.0) â‡’ãƒ•ã‚©ãƒ«ãƒ€ã€ãƒ‡ãƒ•ãƒ¬ãƒ¼ãƒˆã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ä¿è­· 45 (ver.4.5) â‡’ZIP64
+            u8 version_made_upper_byte;//OSã®ç¨®é¡00 (MS-DOS) 03 (UNIX) 07 (Macintosh)
+            u16 version_needed_to_extract;//å±•é–‹ã«å¿…è¦ãªZIPã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
+            u16 general_purpose_bit_flag;//ã‚ªãƒ—ã‚·ãƒ§ãƒ³ãƒ•ãƒ©ã‚°
+            u16 compression_method;//ãƒ•ã‚¡ã‚¤ãƒ«åœ§ç¸®ã«ç”¨ã„ãŸã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ 
+            u16 last_mod_file_time;//ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—(æ™‚åˆ»)
+            u16 last_mod_file_date;//ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—(æ—¥ä»˜)
+            u32 crc_32;//ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ç®—å‡ºã—ãŸ CRC-32 ã®å€¤
+            u32 compressed_size;//åœ§ç¸®å¾Œã®ãƒ‡ãƒ¼ã‚¿é‡ã€File data ã®ã‚µã‚¤ã‚ºç„¡åœ§ç¸®ãªã‚‰ uncompressed size ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã¨åŒå€¤
+            u32 uncompressed_size;//åœ§ç¸®å‰ã®ãƒ‡ãƒ¼ã‚¿é‡
+            u16 file_name_length;//file name ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚µã‚¤ã‚º
+            u16 extra_field_length;//extra field ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚µã‚¤ã‚º
+            u16 file_comment_length;//file_commentãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚µã‚¤ã‚º
+            u16 disk_number_start;//å¯¾å¿œã™ã‚‹ Local file header ãŒæ ¼ç´ã•ã‚Œã¦ã„ã‚‹ãƒ‡ã‚£ã‚¹ã‚¯ã®ç•ªå·
+            u16 internal_file_attributes;//ãƒ‡ãƒ¼ã‚¿ã®å±æ€§(æ€§è³ªã‚’ç¤ºã™)ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°0 (ãƒã‚¤ãƒŠãƒªãƒ‡ãƒ¼ã‚¿)1 (ASCIIã€ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«)
+            u32 external_file_attributes;//ãƒ•ã‚¡ã‚¤ãƒ«ã®å±æ€§(èª­ã¿è¾¼ã¿å°‚ç”¨ã¨ã‹éš ã—ãƒ•ã‚¡ã‚¤ãƒ«ã¨ã‹)
+            u32 relative_offset_of_local_header;//å¯¾å¿œã™ã‚‹ Local file header ã¾ã§ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆZIPãƒ•ã‚¡ã‚¤ãƒ«å…ˆé ­ã‹ã‚‰(ãƒ‡ã‚£ã‚¹ã‚¯åˆ†å‰²æ™‚ã¯ãã®ãƒ‡ã‚£ã‚¹ã‚¯ã®å…ˆé ­ã‹ã‚‰)ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+            char* file_name;//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æ ¼ç´ã™ã‚‹é ˜åŸŸ
+            char* extra_field;//æ‹¡å¼µãƒ‡ãƒ¼ã‚¿ã‚’æ ¼ç´ã™ã‚‹é ˜åŸŸ
+            char* file_comment;//å½“è©²ãƒ•ã‚¡ã‚¤ãƒ«ã«å¯¾ã—ã¦ã®ã‚³ãƒ¡ãƒ³ãƒˆã‚’æ ¼ç´ã™ã‚‹é ˜åŸŸ
         };
 
         //End of central directory record
         struct EndOfCentralDirectoryRecord{
-            u32 end_of_central_dir_signature;//End of central directory record ‚Å‚ ‚é‚±‚Æ‚ğ¦‚·ŒÅ’è’l 0x06054B50 = 0x50, 0x4B, 0x05, 0x06
-            u16 number_of_this_disk;//‚±‚ÌƒfƒBƒXƒN(End of central directory record ‚Ì—L‚é)‚Ì”Ô†ƒfƒBƒXƒN‚Ì‘”
-            u16 number_of_the_disk_with_the_start_of_the_central_directory;//Å‰‚Ì Central directory header ‚ª—L‚éƒfƒBƒXƒN‚Ì”Ô†
-            u16 total_number_of_entries_in_the_central_directory_on_this_disk;//ƒfƒBƒXƒN•ªŠ„‚É‚¨‚¢‚ÄA“¯‚¶ƒfƒBƒXƒN‚©‚çæ“¾‚Å‚«‚é Central directory header ‚Ì”
-            u16 total_number_of_entries_in_the_central_directory;//ZIPƒtƒ@ƒCƒ‹‚ÉŠi”[‚µ‚Ä‚ ‚é Central directory header ‚Ì‘”
-            u32 size_of_the_central_directory;//‘S‚Ä‚Ì Central directory header ƒTƒCƒY‚Ì‡Œv’l
-            u32 offset_of_start_of_central_directory_with_respect_to_the;//Å‰‚Ì Central directory header ‚Ü‚Å‚ÌƒIƒtƒZƒbƒg.ZIPƒtƒ@ƒCƒ‹æ“ª‚©‚ç(ƒfƒBƒXƒN•ªŠ„‚Í‚»‚ÌƒfƒBƒXƒN‚Ìæ“ª‚©‚ç)‚ÌƒIƒtƒZƒbƒg
-            u16 _ZIP_file_comment_length;//.ZIP file comment ƒtƒB[ƒ‹ƒh‚ÌƒTƒCƒY
-            u16 _ZIP_file_comment;//ZIPƒtƒ@ƒCƒ‹‚É‘Î‚µ‚Ä‚ÌƒRƒƒ“ƒg‚ğŠi”[‚·‚é—Ìˆæ (ˆÀ‘S«‚Í•ÛØ‚³‚ê‚È‚¢)
+            u32 end_of_central_dir_signature;//End of central directory record ã§ã‚ã‚‹ã“ã¨ã‚’ç¤ºã™å›ºå®šå€¤ 0x06054B50 = 0x50, 0x4B, 0x05, 0x06
+            u16 number_of_this_disk;//ã“ã®ãƒ‡ã‚£ã‚¹ã‚¯(End of central directory record ã®æœ‰ã‚‹)ã®ç•ªå·ãƒ‡ã‚£ã‚¹ã‚¯ã®ç·æ•°
+            u16 number_of_the_disk_with_the_start_of_the_central_directory;//æœ€åˆã® Central directory header ãŒæœ‰ã‚‹ãƒ‡ã‚£ã‚¹ã‚¯ã®ç•ªå·
+            u16 total_number_of_entries_in_the_central_directory_on_this_disk;//ãƒ‡ã‚£ã‚¹ã‚¯åˆ†å‰²ã«ãŠã„ã¦ã€åŒã˜ãƒ‡ã‚£ã‚¹ã‚¯ã‹ã‚‰å–å¾—ã§ãã‚‹ Central directory header ã®æ•°
+            u16 total_number_of_entries_in_the_central_directory;//ZIPãƒ•ã‚¡ã‚¤ãƒ«ã«æ ¼ç´ã—ã¦ã‚ã‚‹ Central directory header ã®ç·æ•°
+            u32 size_of_the_central_directory;//å…¨ã¦ã® Central directory header ã‚µã‚¤ã‚ºã®åˆè¨ˆå€¤
+            u32 offset_of_start_of_central_directory_with_respect_to_the;//æœ€åˆã® Central directory header ã¾ã§ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ.ZIPãƒ•ã‚¡ã‚¤ãƒ«å…ˆé ­ã‹ã‚‰(ãƒ‡ã‚£ã‚¹ã‚¯åˆ†å‰²æ™‚ã¯ãã®ãƒ‡ã‚£ã‚¹ã‚¯ã®å…ˆé ­ã‹ã‚‰)ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+            u16 _ZIP_file_comment_length;//.ZIP file comment ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ã‚µã‚¤ã‚º
+            u16 _ZIP_file_comment;//ZIPãƒ•ã‚¡ã‚¤ãƒ«ã«å¯¾ã—ã¦ã®ã‚³ãƒ¡ãƒ³ãƒˆã‚’æ ¼ç´ã™ã‚‹é ˜åŸŸ (å®‰å…¨æ€§ã¯ä¿è¨¼ã•ã‚Œãªã„)
         };
 #pragma pack(pop)
         class ZipLoader{
@@ -82,7 +82,7 @@ namespace EVOLUTION{
             const EVOLUTION::CORE::FILE::IFileRead* cp_fileloader;
 
             struct ZipFolder{
-                fpos_t file_pos;
+                u64 file_pos;
                 LocalFileHeader* localfileheader;
                 CentralDirectoryHeader* centraldirectoryheader;
             };
@@ -94,13 +94,13 @@ namespace EVOLUTION{
 
             ~ZipLoader();
 
-            //File‚Ì‘¶İŠm”F
+            //Fileã®å­˜åœ¨ç¢ºèª
             bool IsFileCheck(const char* file_name);
 
-            //file size‚Ìæ“¾
+            //file sizeã®å–å¾—
             u32 GetFileSize(const char* file_name);
 
-            //ƒf[ƒ^‚Ìæ“¾
+            //ãƒ‡ãƒ¼ã‚¿ã®å–å¾—
             s32 GetData(const char* file_name, TEMPLATE::Array<char>& data);
         private:
             void TableLoad();

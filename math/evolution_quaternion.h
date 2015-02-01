@@ -24,12 +24,12 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Quaternion(float x, float y, float z, float w){ this->x = x; this->y = y; this->z = z; this->w = w; }
             EVOLUTION_INLINE Quaternion(const Quaternion& q){ this->x = q.x; this->y = q.y; this->z = q.z; this->w = q.w; }
             //*****************************************************************************
-            //		‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Quaternion operator + () const { return Quaternion(x, y, z, w); }
             EVOLUTION_INLINE Quaternion operator - () const { return Quaternion(-x, -y, -z, -w); }
             //*****************************************************************************
-            //		Quaternion‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		Quaternionæ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Quaternion operator+(const Quaternion& val)const{ return Quaternion(this->x + val.x, this->y + val.y, this->z + val.z, this->w + val.w); }
             EVOLUTION_INLINE Quaternion operator-(const Quaternion& val)const{ return Quaternion(this->x - val.x, this->y - val.y, this->z - val.z, this->w - val.w); }
@@ -59,7 +59,7 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Quaternion& operator-=(const Quaternion& val){ this->x -= val.x; this->y -= val.y; this->z -= val.z; this->w -= val.z; return *this; }
             EVOLUTION_INLINE Quaternion& operator*=(const Quaternion& val){ *this = (val)*(*this); return *this; }
             //*****************************************************************************
-            //		float‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		floatæ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Quaternion operator+(f32 val)const{ return Quaternion(this->x + val, this->y + val, this->z + val, this->w + val); }
             EVOLUTION_INLINE Quaternion operator-(f32 val)const{ return Quaternion(this->x - val, this->y - val, this->z - val, this->w - val); }
@@ -70,22 +70,22 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Quaternion& operator*=(f32 val){ this->x *= val; this->y *= val; this->z *= val; this->w *= val; return *this; }
             EVOLUTION_INLINE Quaternion& operator/=(f32 val){ this->x /= val; this->y /= val; this->z /= val; this->w /= val; return *this; }
             //*****************************************************************************
-            //		‘ã“ü‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		ä»£å…¥æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Quaternion& operator=(const Vector3& val){ this->x = val.x; this->y = val.y; this->z = val.z; this->w = 0.0f; return *this; }
             EVOLUTION_INLINE Quaternion& operator=(const Quaternion& val){ this->x = val.x; this->y = val.y; this->z = val.z; this->w = val.w; return *this; }
             EVOLUTION_INLINE Quaternion& operator=(f32 val){ this->x = val; this->y = val; this->z = val; this->w = val; return *this; }
             //*****************************************************************************
-            //		ŠÖ”
+            //		é–¢æ•°
             //*****************************************************************************
-            //ƒNƒH[ƒ^ƒjƒIƒ“‚Æ‚Ì“àÏ
+            //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã¨ã®å†…ç©
             EVOLUTION_INLINE f32 Dot(const Quaternion& val) const { return this->x*val.x + this->y*val.y + this->z*val.z + this->w*val.w; }
-            //’·‚³‚Ì2æŒvŽZ
+            //é•·ã•ã®2ä¹—è¨ˆç®—
             EVOLUTION_INLINE f32 LengthSq() const { return Dot(*this); }
-            //’·‚³ŒvŽZ
+            //é•·ã•è¨ˆç®—
             f32 Length() const;
 
-            //³‹K‰»
+            //æ­£è¦åŒ–
             EVOLUTION_INLINE const Quaternion* Normalize()
             {
                 f32 len = this->Length();
@@ -93,11 +93,11 @@ namespace EVOLUTION{
                 *this /= len;
                 return this;
             }
-            // ’PˆÊ‰»
+            // å˜ä½åŒ–
             EVOLUTION_INLINE const Quaternion* Identity(){ this->x = this->y = this->z = 0.0f; this->w = 1.0f; return this; }
-            //‹¤–ð‰»
+            //å…±å½¹åŒ–
             EVOLUTION_INLINE const Quaternion* Conjugate(){ this->x = -this->x; this->y = -this->y; this->z = -this->z; return this; }
-            //‹¤–ðƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬
+            //å…±å½¹ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆ
             EVOLUTION_INLINE Quaternion CreateConjugate()const
             {
                 Quaternion ret = *this;
@@ -105,76 +105,76 @@ namespace EVOLUTION{
                 return ret;
             }
 
-            //‹t”‰»‚µ‚ÄŽ©g‚É‘ã“ü
+            //é€†æ•°åŒ–ã—ã¦è‡ªèº«ã«ä»£å…¥
             EVOLUTION_INLINE const Quaternion* Inverse()
             {
                 this->Conjugate();
                 f32 lensq = this->LengthSq();
-                //‚à‚µƒNƒH[ƒ^ƒjƒIƒ“‚Ì’·‚³‚Ì“ñæ‚ª0‚È‚çƒGƒ‰[
+                //ã‚‚ã—ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®é•·ã•ã®äºŒä¹—ãŒ0ãªã‚‰ã‚¨ãƒ©ãƒ¼
                 assert(lensq != 0.0f);
                 *this /= lensq;
                 return this;
             }
 
-            //‹t”ƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬,ì¬‚Å‚«‚È‚¯‚ê‚Î‹­§I—¹‚·‚é
+            //é€†æ•°ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆ,ä½œæˆã§ããªã‘ã‚Œã°å¼·åˆ¶çµ‚äº†ã™ã‚‹
             EVOLUTION_INLINE Quaternion CreateInverse()const
             {
                 Quaternion ret = this->CreateConjugate();
                 f32 lensq = this->LengthSq();
-                //‚à‚µƒNƒH[ƒ^ƒjƒIƒ“‚Ì’·‚³‚Ì“ñæ‚ª0‚È‚çƒGƒ‰[
+                //ã‚‚ã—ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®é•·ã•ã®äºŒä¹—ãŒ0ãªã‚‰ã‚¨ãƒ©ãƒ¼
                 assert(lensq != 0.0f);
                 ret /= lensq;
                 return ret;
             }
 
-            //ƒNƒH[ƒ^ƒjƒIƒ““¯Žm‚Ì‡¬‚µ‚ÄV‚µ‚¢ƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é
+            //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³åŒå£«ã®åˆæˆã—ã¦æ–°ã—ã„ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹
             EVOLUTION_INLINE Quaternion Comp(const Quaternion& q){ return q*(*this); }
 
-            //ƒNƒH[ƒ^ƒjƒIƒ“‚ðƒNƒH[ƒ^ƒjƒIƒ“‚Å‰ñ“]
+            //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã§å›žè»¢
             EVOLUTION_INLINE const Quaternion* Rotate(const Quaternion& q){ *this = q*(*this); return this; }
 
-            //ƒNƒH[ƒ^ƒjƒIƒ“‹…–ÊüŒ`•âŠÔ‚µ‚ÄŽ©g‚É‘ã“ü‚·‚é
+            //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³çƒé¢ç·šå½¢è£œé–“ã—ã¦è‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Quaternion* SLerp(const Quaternion& q, f32 t);
             //*****************************************************************************
-            //		¬•ª‘€ìŠÖ˜A
+            //		æˆåˆ†æ“ä½œé–¢é€£
             //*****************************************************************************
 
-            //ƒIƒCƒ‰[Šp‚©‚çXŽ²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“ì¬
+            //ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰Xè»¸å›žè»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½œæˆ
             const Quaternion* SetRX(f32 rad);
-            //ƒIƒCƒ‰[Šp‚©‚çYŽ²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“ì¬
+            //ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰Yè»¸å›žè»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½œæˆ
             const Quaternion* SetRY(f32 rad);
-            //ƒIƒCƒ‰[Šp‚©‚çZŽ²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“ì¬
+            //ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰Zè»¸å›žè»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½œæˆ
             const Quaternion* SetRZ(f32 rad);
-            //ƒIƒCƒ‰[Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é(XYZƒI[ƒ_[)
+            //ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹(XYZã‚ªãƒ¼ãƒ€ãƒ¼)
             const Quaternion* SetRXYZ(f32 sx, f32 sy, f32 sz);
-            //ƒIƒCƒ‰[Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é(XYZƒI[ƒ_[)
+            //ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹(XYZã‚ªãƒ¼ãƒ€ãƒ¼)
             EVOLUTION_INLINE const Quaternion* SetRXYZ(const Vector3& angle){ return this->SetRXYZ(angle.x, angle.y, angle.z); }
-            //ƒIƒCƒ‰[Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é(ZXYƒI[ƒ_[)
+            //ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹(ZXYã‚ªãƒ¼ãƒ€ãƒ¼)
             const Quaternion* SetRZXY(f32 sx, f32 sy, f32 sz);
-            //ƒIƒCƒ‰[Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é(ZXYƒI[ƒ_[)
+            //ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹(ZXYã‚ªãƒ¼ãƒ€ãƒ¼)
             EVOLUTION_INLINE const Quaternion* SetRZXY(const Vector3& angle){ return this->SetRZXY(angle.x, angle.y, angle.z); }
-            //”CˆÓ‚ÌŽ²‚Æ‰ñ“]Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é
+            //ä»»æ„ã®è»¸ã¨å›žè»¢è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹
             const Quaternion* SetR(const Vector3 &axis, f32 rad);
             //*****************************************************************************
-            //		¬•ªŽæ“¾ŠÖ˜A
+            //		æˆåˆ†å–å¾—é–¢é€£
             //*****************************************************************************
 
-            //ƒNƒH[ƒ^ƒjƒIƒ“‚ÌŽ²‚Æ‰ñ“]Šp‚É•ª‰ð‚·‚é
+            //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®è»¸ã¨å›žè»¢è§’ã«åˆ†è§£ã™ã‚‹
             void Decompose(Vector3* axis, f32* rad) const;
-            //ƒNƒH[ƒ^ƒjƒIƒ“‚ðŽp¨ƒxƒNƒgƒ‹‚É•ª‰ð‚·‚é
+            //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’å§¿å‹¢ãƒ™ã‚¯ãƒˆãƒ«ã«åˆ†è§£ã™ã‚‹
             void Decompose(Vector3* right, Vector3* up, Vector3* front) const;
 
             //*****************************************************************************
-            //		•ÏŠ·ŠÖ˜A
+            //		å¤‰æ›é–¢é€£
             //*****************************************************************************
 
-            //s—ñ‚É•ÏŠ·‚·‚é
+            //è¡Œåˆ—ã«å¤‰æ›ã™ã‚‹
             const Matrix* ToMatrix(Matrix* out)const;
-            //s—ñ‚É•ÏŠ·‚·‚é
+            //è¡Œåˆ—ã«å¤‰æ›ã™ã‚‹
             Matrix ToMatrix()const;
-            //XYZƒI[ƒ_[ƒIƒCƒ‰[Šp‚É•ÏŠ·‚·‚é
+            //XYZã‚ªãƒ¼ãƒ€ãƒ¼ã‚ªã‚¤ãƒ©ãƒ¼è§’ã«å¤‰æ›ã™ã‚‹
             const Vector3* ToEulerXYZ(Vector3* out)const;
-            //ZXYƒI[ƒ_[ƒIƒCƒ‰[Šp‚É•ÏŠ·‚·‚é(ƒXƒP[ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚é‚ÆˆÓ}‚µ‚½Œ‹‰Ê‚É‚È‚ç‚È‚¢)
+            //ZXYã‚ªãƒ¼ãƒ€ãƒ¼ã‚ªã‚¤ãƒ©ãƒ¼è§’ã«å¤‰æ›ã™ã‚‹(ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã‚‹ã¨æ„å›³ã—ãŸçµæžœã«ãªã‚‰ãªã„)
             const Vector3* ToEulerZXY(Vector3* out)const;
         };
     }

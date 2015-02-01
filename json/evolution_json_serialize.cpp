@@ -10,7 +10,7 @@ JsonSerialize::JsonSerialize(const char* json, u32 buffer_count) : str_master(js
     mp_buffer = NEW char[buffer_count];
     mp_buffer[0] = '\0';
 
-    //CRC32ƒe[ƒuƒ‹‚Ìì¬
+    //CRC32ãƒ†ãƒ¼ãƒ–ãƒ«ã®ä½œæˆ
     for (u32 i = 0; i < 256; i++) {
         u32 c = i;
         for (int j = 0; j < 8; j++) {

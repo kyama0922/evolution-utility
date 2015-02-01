@@ -171,7 +171,7 @@ namespace EVOLUTION{
 
             u32 GetCount()const;
             IJsonObject* GetJsonObject(u32 index) const;
-            IJsonArray* JsonArray::GetJsonArray(u32 index)const;
+            IJsonArray* GetJsonArray(u32 index)const;
             double GetNumber(u32 index)const;
             const char* GetString(u32 index)const;
             bool GetBoolean(u32 index)const;

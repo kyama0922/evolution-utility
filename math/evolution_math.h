@@ -1,22 +1,22 @@
 #ifndef __EVOLUTION_MATH_H__
 #define __EVOLUTION_MATH_H__
 
-//Vector2クラス
+//Vector2繧ｯ繝ｩ繧ｹ
 #include "evolution_vector2.h"
 
-//Vector3クラス
+//Vector3繧ｯ繝ｩ繧ｹ
 #include "evolution_vector3.h"
 
-//Vector4クラス
+//Vector4繧ｯ繝ｩ繧ｹ
 #include "evolution_vector4.h"
 
-//クォータニオンクラス
+//繧ｯ繧ｩ繝ｼ繧ｿ繝九が繝ｳ繧ｯ繝ｩ繧ｹ
 #include "evolution_quaternion.h"
 
-//行列クラス
+//陦悟�励け繝ｩ繧ｹ
 #include "evolution_matrix.h"
 
-//数学用Utility
+//謨ｰ蟄ｦ逕ｨUtility
 #include "evolution_math_utility.h"
 
 #endif //!__MATH_H__

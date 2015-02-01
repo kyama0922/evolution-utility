@@ -27,9 +27,9 @@ RESULT JsonArray::QueryInterface(EVOLUTION_IID riid, void **ppvObject){
     else
     {
         *ppvObject = nullptr;
-        return RESULT::E_no_instance;
+        return _RESULT::E_no_instance;
     }
-    return RESULT::S_ok;
+    return _RESULT::S_ok;
 }
 
 u32 JsonArray::Release(){

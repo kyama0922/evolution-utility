@@ -33,12 +33,12 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector4(const Vector4& val){ *this = val; }
             EVOLUTION_INLINE Vector4(const Quaternion& val){ *this = val; }
             //*****************************************************************************
-            //		‰‰ZƒIƒyƒŒ[ƒ^
+            //		æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector4 operator + () const { return Vector4(x, y, z, w); }
             EVOLUTION_INLINE Vector4 operator - () const { return Vector4(-x, -y, -z, -w); }
             //*****************************************************************************
-            //		float‰‰ZƒIƒyƒŒ[ƒ^
+            //		floatæ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector4 operator+(f32 val)const{ return Vector4(this->x + val, this->y + val, this->z + val, this->w + val); }
             EVOLUTION_INLINE Vector4 operator-(f32 val)const{ return Vector4(this->x - val, this->y - val, this->z - val, this->w - val); }
@@ -49,51 +49,51 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector4& operator*=(f32 val){ this->x *= val; this->y *= val; this->z *= val; this->w *= val; return *this; }
             EVOLUTION_INLINE Vector4& operator/=(f32 val){ this->x /= val; this->y /= val; this->z /= val; this->w /= val; return *this; }
             //*****************************************************************************
-            //		VECTOR2‰‰ZƒIƒyƒŒ[ƒ^
+            //		VECTOR2æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector4 operator+(const Vector2& val)const{ return Vector4(this->x + val.x, this->y + val.y, this->z, this->w); }
             EVOLUTION_INLINE Vector4 operator-(const Vector2& val)const{ return Vector4(this->x - val.x, this->y - val.y, this->z, this->w); }
             EVOLUTION_INLINE Vector4& operator+=(const Vector2& val){ this->x += val.x; this->y += val.y; return *this; }
             EVOLUTION_INLINE Vector4& operator-=(const Vector2& val){ this->x -= val.x; this->y -= val.y; return *this; }
             //*****************************************************************************
-            //		VECTOR3‰‰ZƒIƒyƒŒ[ƒ^
+            //		VECTOR3æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector4 operator+(const Vector3& val)const{ return Vector4(this->x + val.x, this->y + val.y, this->z + val.z, this->w); }
             EVOLUTION_INLINE Vector4 operator-(const Vector3& val)const{ return Vector4(this->x - val.x, this->y - val.y, this->z - val.z, this->w); }
             EVOLUTION_INLINE Vector4& operator+=(const Vector3& val){ this->x += val.x; this->y += val.y; this->z += val.z; return *this; }
             EVOLUTION_INLINE Vector4& operator-=(const Vector3& val){ this->x -= val.x; this->y -= val.y; this->z -= val.z; return *this; }
             //*****************************************************************************
-            //		Vector4‰‰ZƒIƒyƒŒ[ƒ^
+            //		Vector4æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector4 operator+(const Vector4& val)const{ return Vector4(this->x + val.x, this->y + val.y, this->z + val.z, this->w + val.w); }
             EVOLUTION_INLINE Vector4 operator-(const Vector4& val)const{ return Vector4(this->x - val.x, this->y - val.y, this->z - val.z, this->w - val.w); }
             EVOLUTION_INLINE Vector4& operator+=(const Vector4& val){ this->x += val.x; this->y += val.y; this->z += val.z; this->w += val.w; return *this; }
             EVOLUTION_INLINE Vector4& operator-=(const Vector4& val){ this->x -= val.x; this->y -= val.y; this->z -= val.z; this->w -= val.w; return *this; }
             //*****************************************************************************
-            //		Matrix‰‰ZƒIƒyƒŒ[ƒ^
+            //		Matrixæ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             //*****************************************************************************
-            //		‘ã“ü‰‰ZƒIƒyƒŒ[ƒ^
+            //		ä»£å…¥æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             Vector4& operator=(const Vector2& val);
             Vector4& operator=(const Vector3& val);
             Vector4& operator=(const Vector4& val);
             Vector4& operator=(const Quaternion& val);
             //*****************************************************************************
-            //		ŠÖ”
+            //		é–¢æ•°
             //*****************************************************************************
 
-            //ƒxƒNƒgƒ‹‚Ì“àÏ‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®å†…ç©ã‚’æ±‚ã‚ã‚‹
             EVOLUTION_INLINE f32 Dot(const Vector4& val)const { return this->x*val.x + this->y*val.y + this->z*val.z + this->w*val.w; }
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚Ì“ñæ‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
             EVOLUTION_INLINE f32 LengthSq()const{ return this->Dot(*this); }
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
             f32 Length()const;
-            //ƒxƒNƒgƒ‹‚ğ³‹K‰»‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–ã™ã‚‹
             const Vector4* Normalize();
-            //ƒxƒNƒgƒ‹‚ğüŒ`•âŠÔ‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’ç·šå½¢è£œé–“ã™ã‚‹
             const Vector4* Lerp(const Vector4& from, const Vector4& dest, f32 t);
-            //ƒxƒNƒgƒ‹‚ğs—ñ•ÏŠ·‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’è¡Œåˆ—å¤‰æ›ã™ã‚‹
             const Vector4* Trans(const Matrix& m);
         };
     }

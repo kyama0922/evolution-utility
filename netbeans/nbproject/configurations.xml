@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="SourceFiles" displayName="ソース・ファイル" projectFiles="true">
+      <logicalFolder name="etc" displayName="etc" projectFiles="true">
+        <itemPath>../etc/evolution_binary_search_collection.cpp</itemPath>
+        <itemPath>../etc/evolution_binary_search_collection.h</itemPath>
+        <itemPath>../etc/evolution_collection.cpp</itemPath>
+        <itemPath>../etc/evolution_collection.h</itemPath>
+        <itemPath>../etc/evolution_color.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="file" displayName="file" projectFiles="true">
+        <logicalFolder name="zlib" displayName="zlib" projectFiles="true">
+          <itemPath>../file/zlib/adler32.c</itemPath>
+          <itemPath>../file/zlib/compress.c</itemPath>
+          <itemPath>../file/zlib/crc32.c</itemPath>
+          <itemPath>../file/zlib/crc32.h</itemPath>
+          <itemPath>../file/zlib/deflate.c</itemPath>
+          <itemPath>../file/zlib/deflate.h</itemPath>
+          <itemPath>../file/zlib/gzclose.c</itemPath>
+          <itemPath>../file/zlib/gzguts.h</itemPath>
+          <itemPath>../file/zlib/gzlib.c</itemPath>
+          <itemPath>../file/zlib/gzread.c</itemPath>
+          <itemPath>../file/zlib/gzwrite.c</itemPath>
+          <itemPath>../file/zlib/infback.c</itemPath>
+          <itemPath>../file/zlib/inffast.c</itemPath>
+          <itemPath>../file/zlib/inffast.h</itemPath>
+          <itemPath>../file/zlib/inffixed.h</itemPath>
+          <itemPath>../file/zlib/inflate.c</itemPath>
+          <itemPath>../file/zlib/inflate.h</itemPath>
+          <itemPath>../file/zlib/inftrees.c</itemPath>
+          <itemPath>../file/zlib/inftrees.h</itemPath>
+          <itemPath>../file/zlib/trees.c</itemPath>
+          <itemPath>../file/zlib/trees.h</itemPath>
+          <itemPath>../file/zlib/uncompr.c</itemPath>
+          <itemPath>../file/zlib/zconf.h</itemPath>
+          <itemPath>../file/zlib/zlib.h</itemPath>
+          <itemPath>../file/zlib/zutil.c</itemPath>
+          <itemPath>../file/zlib/zutil.h</itemPath>
+        </logicalFolder>
+        <itemPath>../file/evolution_zip_loader.cpp</itemPath>
+        <itemPath>../file/evolution_zip_loader.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="function" displayName="function" projectFiles="true">
+        <itemPath>../function/evolution_utility_function.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="json" displayName="json" projectFiles="true">
+        <itemPath>../json/evolution_json_array.cpp</itemPath>
+        <itemPath>../json/evolution_json_boolean.cpp</itemPath>
+        <itemPath>../json/evolution_json_null.cpp</itemPath>
+        <itemPath>../json/evolution_json_number.cpp</itemPath>
+        <itemPath>../json/evolution_json_object.cpp</itemPath>
+        <itemPath>../json/evolution_json_parse_implement.h</itemPath>
+        <itemPath>../json/evolution_json_parse_interface.h</itemPath>
+        <itemPath>../json/evolution_json_root.cpp</itemPath>
+        <itemPath>../json/evolution_json_serialize.cpp</itemPath>
+        <itemPath>../json/evolution_json_string.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="math" displayName="math" projectFiles="true">
+        <itemPath>../math/evolution_math.h</itemPath>
+        <itemPath>../math/evolution_math_utility.cpp</itemPath>
+        <itemPath>../math/evolution_math_utility.h</itemPath>
+        <itemPath>../math/evolution_matrix.cpp</itemPath>
+        <itemPath>../math/evolution_matrix.h</itemPath>
+        <itemPath>../math/evolution_quaternion.cpp</itemPath>
+        <itemPath>../math/evolution_quaternion.h</itemPath>
+        <itemPath>../math/evolution_vector2.cpp</itemPath>
+        <itemPath>../math/evolution_vector2.h</itemPath>
+        <itemPath>../math/evolution_vector3.cpp</itemPath>
+        <itemPath>../math/evolution_vector3.h</itemPath>
+        <itemPath>../math/evolution_vector4.cpp</itemPath>
+        <itemPath>../math/evolution_vector4.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="HeaderFiles" displayName="ヘッダー・ファイル" projectFiles="true">
+      <itemPath>../evolution_utility.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles" displayName="リソース・ファイル" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="テスト・ファイル"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="重要なファイル"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../etc</Elem>
+    <Elem>../function</Elem>
+    <Elem>../file</Elem>
+    <Elem>../json</Elem>
+    <Elem>../math</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../..</pElem>
+          </incDir>
+          <commandLine>-ggdb -O0 -lrt</commandLine>
+          <preprocessorList>
+            <Elem>_DEBUG</Elem>
+            <Elem>_LINUX=1</Elem>
+            <Elem>_X64=1</Elem>
+            <Elem>nullptr=0</Elem>
+          </preprocessorList>
+        </ccTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevolution-utility.a</output>
+        </archiverTool>
+      </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/libevolution-utility.tar</output>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
+      <item path="../etc/evolution_binary_search_collection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../etc/evolution_binary_search_collection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../etc/evolution_collection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../etc/evolution_collection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../etc/evolution_color.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../evolution_utility.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/evolution_zip_loader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../file/evolution_zip_loader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/adler32.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/compress.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/crc32.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/crc32.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/deflate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/deflate.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzclose.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzguts.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzlib.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzread.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzwrite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/infback.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inffast.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inffast.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/inffixed.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/inflate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inflate.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/inftrees.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inftrees.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/trees.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/trees.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/uncompr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/zconf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/zlib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/zutil.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/zutil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../function/evolution_utility_function.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_array.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_boolean.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_null.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_number.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_object.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_parse_implement.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_parse_interface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_root.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_serialize.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_math.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_math_utility.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_math_utility.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_matrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_matrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_quaternion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_quaternion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector4.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>../..</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>NODEBUG=1</Elem>
+            <Elem>_LINUX=1</Elem>
+            <Elem>_X64=1</Elem>
+            <Elem>nullptr=0</Elem>
+          </preprocessorList>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libevolution-utility.a</output>
+        </archiverTool>
+      </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/libevolution-utility.tar</output>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
+      <item path="../etc/evolution_binary_search_collection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../etc/evolution_binary_search_collection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../etc/evolution_collection.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../etc/evolution_collection.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../etc/evolution_color.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../evolution_utility.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/evolution_zip_loader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../file/evolution_zip_loader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/adler32.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/compress.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/crc32.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/crc32.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/deflate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/deflate.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzclose.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzguts.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzlib.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzread.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/gzwrite.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/infback.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inffast.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inffast.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/inffixed.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/inflate.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inflate.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/inftrees.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/inftrees.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/trees.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/trees.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/uncompr.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/zconf.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/zlib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../file/zlib/zutil.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../file/zlib/zutil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../function/evolution_utility_function.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_array.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_boolean.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_null.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_number.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_object.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_parse_implement.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_parse_interface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_root.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../json/evolution_json_serialize.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../json/evolution_json_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_math.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_math_utility.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_math_utility.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_matrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_matrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_quaternion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_quaternion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../math/evolution_vector4.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

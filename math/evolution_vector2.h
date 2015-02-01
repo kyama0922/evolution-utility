@@ -35,13 +35,13 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector2(f32 x, f32 y){ this->x = x; this->y = y; }
             EVOLUTION_INLINE Vector2(const Vector2& val){ *this = val; }
             //*****************************************************************************
-            //		‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
 
             EVOLUTION_INLINE Vector2 operator + () const { return Vector2(x, y); }
             EVOLUTION_INLINE Vector2 operator - () const { return Vector2(-x, -y); }
             //*****************************************************************************
-            //		float‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		floatæ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
 
             EVOLUTION_INLINE Vector2 operator+(f32 val)const{ return Vector2(this->x + val, this->y + val); }
@@ -53,7 +53,7 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector2& operator*=(f32 val){ this->x *= val; this->y *= val; return *this; }
             EVOLUTION_INLINE Vector2& operator/=(f32 val){ this->x /= val; this->y /= val; return *this; }
             //*****************************************************************************
-            //		VECTOR2‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		VECTOR2æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
 
             EVOLUTION_INLINE Vector2 operator+(const Vector2& val)const{ return Vector2(this->x + val.x, this->y + val.y); }
@@ -61,48 +61,48 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector2& operator+=(const Vector2& val){ this->x += val.x; this->y += val.y; return *this; }
             EVOLUTION_INLINE Vector2& operator-=(const Vector2& val){ this->x -= val.x; this->y -= val.y; return *this; }
             //*****************************************************************************
-            //		‘ã“ü‰‰ŽZƒIƒyƒŒ[ƒ^
+            //		ä»£å…¥æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector2& operator=(const Vector2& val){ this->x = val.x; this->y = val.y; return *this; }
             Vector2& operator=(const Vector3& val);
             Vector2& operator=(const Vector4& val);
             //*****************************************************************************
-            //		ŠÖ”
+            //		é–¢æ•°
             //*****************************************************************************
             
-            //ƒxƒNƒgƒ‹‚Ì“àÏ‚ð‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®å†…ç©ã‚’æ±‚ã‚ã‚‹
             EVOLUTION_INLINE f32 Dot(const Vector2& vec)const{ return this->x*vec.x + this->y*vec.y; }
-            //ƒxƒNƒgƒ‹‚ÌŠOÏ‚ð‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®å¤–ç©ã‚’æ±‚ã‚ã‚‹
             EVOLUTION_INLINE f32 Cross(const Vector2& vec)const{ return this->x*vec.y - vec.x*this->y; }
-           //ƒxƒNƒgƒ‹ŠÔ‚ÌŠp“x‚ð‹‚ß‚é
+           //ãƒ™ã‚¯ãƒˆãƒ«é–“ã®è§’åº¦ã‚’æ±‚ã‚ã‚‹
             f32 Degree(const Vector2& vec)const;
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚Ì“ñæ‚ð‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
             EVOLUTION_INLINE f32 LengthSq()const{ return Dot(*this); }
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚ð‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
             f32 Length()const;
-            //ƒxƒNƒgƒ‹‚Ì‹——£‚Ì“ñæ‚ð‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®è·é›¢ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
             f32 DistanceSq(const Vector2& vec)const;
-            //ƒxƒNƒgƒ‹‚Ì‹——£‚ð‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®è·é›¢ã‚’æ±‚ã‚ã‚‹
             f32 Distance(const Vector2& vec)const;
-            //ƒxƒNƒgƒ‹‚ð³‹K‰»
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–
             const Vector2* Normalize();
-            //ƒxƒNƒgƒ‹‚ðüŒ`•âŠÔ‚µŽ©g‚ÉŠi”[
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’ç·šå½¢è£œé–“ã—è‡ªèº«ã«æ ¼ç´
             const Vector2* Lerp(const Vector2& from, const Vector2& dest, f32 t);
-            //ŽË‰eƒxƒNƒgƒ‹‚ð‹‚ß‚ÄŽ©g‚É‘ã“ü
+            //å°„å½±ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã¦è‡ªèº«ã«ä»£å…¥
             const Vector2* Projection(const Vector2& from, const Vector2& dest);
             //*****************************************************************************
-            //		¬•ª‘€ìŠÖ˜A
+            //		æˆåˆ†æ“ä½œé–¢é€£
             //*****************************************************************************
             
-            //Šp“x‚©‚çƒxƒNƒgƒ‹‚ðì¬‚·‚é
+            //è§’åº¦ã‹ã‚‰ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä½œæˆã™ã‚‹
             const Vector2* SetR(f32 rad);
-            //ƒxƒNƒgƒ‹‚ð”CˆÓ‚Ì’·‚³‚É‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä»»æ„ã®é•·ã•ã«ã™ã‚‹
             const Vector2* SetLength(f32 len);
             //*****************************************************************************
-            //		•ÏŠ·ŠÖ˜A
+            //		å¤‰æ›é–¢é€£
             //*****************************************************************************
             
-            //ƒxƒNƒgƒ‹‚ðŠp“x‚É•ÏŠ·‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’è§’åº¦ã«å¤‰æ›ã™ã‚‹
             f32 ToEuler()const;
         };
     }

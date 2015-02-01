@@ -1,38 +1,38 @@
 #ifndef __EVOLUTION_UTILITY__
 #define __EVOLUTION_UTILITY__
 
-//EVOLUTIONƒ‰ƒCƒuƒ‰ƒŠ‚Åˆµ‚¤Šî–{Œ^î•ñ‚Ìƒwƒbƒ_
+//EVOLUTIONãƒ©ã‚¤ãƒ–ãƒ©ãƒªã§æ‰±ã†åŸºæœ¬å‹æƒ…å ±ã®ãƒ˜ãƒƒãƒ€
 #include <evolution.h>
 
 //----------------------------------------------------
-//”ŠwŠÖŒW
+//æ•°å­¦é–¢ä¿‚
 //----------------------------------------------------
 #include "math/evolution_math.h"
 
 //----------------------------------------------------
-//ƒtƒ@ƒCƒ‹ŠÖŒW
+//ãƒ•ã‚¡ã‚¤ãƒ«é–¢ä¿‚
 //----------------------------------------------------
 
-//ZipƒA[ƒJƒCƒuˆµ‚¤ƒNƒ‰ƒX
+//Zipã‚¢ãƒ¼ã‚«ã‚¤ãƒ–æ‰±ã†ã‚¯ãƒ©ã‚¹
 #include "file/evolution_zip_loader.h"
 
 //----------------------------------------------------
 //ETC
 //----------------------------------------------------
 
-//Json‚Ìƒp[ƒT[
+//Jsonã®ãƒ‘ãƒ¼ã‚µãƒ¼
 #include "json/evolution_json_parse_interface.h"
 
-//ŠÖ”
+//é–¢æ•°
 #include "function/evolution_utility_function.h"
 
-//ƒJƒ‰[
+//ã‚«ãƒ©ãƒ¼
 #include "etc/evolution_color.h"
 
-//ƒRƒŒƒNƒVƒ‡ƒ“
+//ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³
 #include "etc/evolution_collection.h"
 
-//ƒRƒŒƒNƒVƒ‡ƒ“
+//ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³
 #include "etc/evolution_binary_search_collection.h"
 
 #endif //!__EVOLUTION_UTILITY_H__

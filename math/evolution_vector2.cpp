@@ -11,12 +11,12 @@ using namespace EVOLUTION::MATH;
 //--------------------------------------------------------------------------------------------------
 
 //*****************************************************************************
-//		代入演算オペレータ
+//		莉｣蜈･貍皮ｮ励が繝壹Ξ繝ｼ繧ｿ
 //*****************************************************************************
 Vector2& Vector2::operator=(const Vector3& val){ this->x = val.x; this->y = val.y; return *this; }
 Vector2& Vector2::operator=(const Vector4& val){ this->x = val.x; this->y = val.y; return *this; }
 //*****************************************************************************
-//		関数
+//		髢｢謨ｰ
 //*****************************************************************************
 f32 Vector2::Degree(const Vector2& vec)const{ return Vector2Degree(*this, vec); }
 f32 Vector2::Length()const{ return Vector2Length(*this); }
@@ -26,12 +26,12 @@ const Vector2* Vector2::Normalize(){ return Vector2Normalize(this, *this); }
 const Vector2* Vector2::Lerp(const Vector2& from, const Vector2& dest, f32 t){ return Vector2Lerp(this, from, dest, t); }
 const Vector2* Vector2::Projection(const Vector2& from, const Vector2& dest){ return Vector2Projection(this, from, dest); }
 //*****************************************************************************
-//		成分操作関連
+//		謌仙��謫堺ｽ憺未騾｣
 //*****************************************************************************
 const Vector2* Vector2::SetR(f32 rad){ return Vector2fromEuler(this, rad); }
 const Vector2* Vector2::SetLength(f32 len){ return Vector2SetLength(this, *this, len); }
 //*****************************************************************************
-//		変換関連
+//		螟画鋤髢｢騾｣
 //*****************************************************************************
 f32 Vector2::ToEuler()const{ return Vector2toEuler(*this); }
 

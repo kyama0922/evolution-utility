@@ -1,4 +1,4 @@
-﻿#ifndef __EVOLUTION_COLOR_H__
+#ifndef __EVOLUTION_COLOR_H__
 #define __EVOLUTION_COLOR_H__
 
 #include "../math/evolution_math.h"

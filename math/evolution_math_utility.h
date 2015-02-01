@@ -13,16 +13,16 @@
 namespace EVOLUTION{
     namespace MATH{
         const f32 PI_F = 3.141592654f;
-        //’P¸“x•‚“®¬”“_Œ^‚Ì¬‚³‚¢’l
+        //å˜ç²¾åº¦æµ®å‹•å°æ•°ç‚¹å‹ã®å°ã•ã„å€¤
         const f64  FEQ_EPS = 1e-6;
-        //’P¸“x•‚“®¬”“_Œ^‚Ì‚³‚ç‚É¬‚³‚¢’l
+        //å˜ç²¾åº¦æµ®å‹•å°æ•°ç‚¹å‹ã®ã•ã‚‰ã«å°ã•ã„å€¤
         const f64  FEQ_EPS2 = 1e-12;
 
-        //‰~ü—¦*2
+        //å††å‘¨ç‡*2
         const f32 PI_F2 = 6.28318548f;
-        //1ƒ‰ƒWƒAƒ“–ˆ•b
+        //1ãƒ©ã‚¸ã‚¢ãƒ³æ¯ç§’
         const f32 RAD = 57.2957802f;
-        //1“x–ˆ•b
+        //1åº¦æ¯ç§’
         const f32 DEG = 0.0174532924f;
 
         //
@@ -30,8 +30,8 @@ namespace EVOLUTION{
         const f32 FLOAT_MIN = 1.175494351e-38f;
 
         /**
-        * @brief min`max‚ÌŠÔ‚ğüŒ`•âŠÔ
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief minï½maxã®é–“ã‚’ç·šå½¢è£œé–“
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         template<typename T, typename U>
         EVOLUTION_INLINE T lerp(T min, T max, U t)
@@ -41,57 +41,57 @@ namespace EVOLUTION{
 
 
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 absf(f32 _X){ unsigned int tmp = *((unsigned int*)&_X) & 0x7FFFFFFF; return *((float*)&tmp); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 sinf(f32 _X){ return ::sinf(_X); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 cosf(f32 _X){ return ::cosf(_X); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 tanf(f32 _X){ return ::tanf(_X); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 asinf(f32 _X){/*DYNAMIC_ASSERT_LIMIT(_X,-1.0f,1.0f)*/; return ::asinf(_X); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 acosf(f32 _X){/*DYNAMIC_ASSERT_LIMIT(_X,-1.0f,1.0f)*/; return ::acosf(_X); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 atanf(f32 _X){ return ::atanf(_X); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 atan2f(f32 _Y, f32 _X){ return ::atan2f(_Y, _X); }
         /**
-        * @brief â‘Î’læ“¾ŠÖ”
-        * @param[int] _X ƒXƒJƒ‰[
+        * @brief çµ¶å¯¾å€¤å–å¾—é–¢æ•°
+        * @param[int] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE f32 sqrtf(f32 _X){ return ::sqrtf(_X); }
 
         /**
-        * @brief 32bit®”Œ^v‚ğb`e‚ÌŠÔ‚ÅŒJ‚è•Ô‚µ
-        * @param[in] b ƒXƒJƒ‰[
-        * @param[in] e ƒXƒJƒ‰[
-        * @param[in] v ƒXƒJƒ‰[
-        * @return ƒ‰ƒbƒvƒAƒ‰ƒEƒ“ƒh‚³‚ê‚½’l
+        * @brief 32bitæ•´æ•°å‹vã‚’bï½eã®é–“ã§ç¹°ã‚Šè¿”ã—
+        * @param[in] b ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] e ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] v ã‚¹ã‚«ãƒ©ãƒ¼
+        * @return ãƒ©ãƒƒãƒ—ã‚¢ãƒ©ã‚¦ãƒ³ãƒ‰ã•ã‚ŒãŸå€¤
         */
         static EVOLUTION_INLINE s32 wrapi(s32 b, s32 e, s32 v)
         {
@@ -101,11 +101,11 @@ namespace EVOLUTION{
             return v + (v >> 31 & dist) + b;
         }
         /**
-        * @brief 32bit•‚“®¬”“_Œ^v‚ğb`e‚ÌŠÔ‚ÅŒJ‚è•Ô‚µ
-        * @param[in] b ƒXƒJƒ‰[
-        * @param[in] e ƒXƒJƒ‰[
-        * @param[in] v ƒXƒJƒ‰[
-        * @return ƒ‰ƒbƒvƒAƒ‰ƒEƒ“ƒh‚³‚ê‚½’l
+        * @brief 32bitæµ®å‹•å°æ•°ç‚¹å‹vã‚’bï½eã®é–“ã§ç¹°ã‚Šè¿”ã—
+        * @param[in] b ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] e ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] v ã‚¹ã‚«ãƒ©ãƒ¼
+        * @return ãƒ©ãƒƒãƒ—ã‚¢ãƒ©ã‚¦ãƒ³ãƒ‰ã•ã‚ŒãŸå€¤
         */
         static EVOLUTION_INLINE f32 wrapf(f32 b, f32 e, f32 v)
         {
@@ -116,11 +116,11 @@ namespace EVOLUTION{
             return v + *(f32*)&ofs + b;
         }
         /**
-        * @brief 64bit®”Œ^v‚ğb`e‚ÌŠÔ‚ÅŒJ‚è•Ô‚µ
-        * @param[in] b ƒXƒJƒ‰[
-        * @param[in] e ƒXƒJƒ‰[
-        * @param[in] v ƒXƒJƒ‰[
-        * @return ƒ‰ƒbƒvƒAƒ‰ƒEƒ“ƒh‚³‚ê‚½’l
+        * @brief 64bitæ•´æ•°å‹vã‚’bï½eã®é–“ã§ç¹°ã‚Šè¿”ã—
+        * @param[in] b ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] e ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] v ã‚¹ã‚«ãƒ©ãƒ¼
+        * @return ãƒ©ãƒƒãƒ—ã‚¢ãƒ©ã‚¦ãƒ³ãƒ‰ã•ã‚ŒãŸå€¤
         */
         static EVOLUTION_INLINE s64 wrapl(s64 b, s64 e, s64 v)
         {
@@ -130,11 +130,11 @@ namespace EVOLUTION{
             return v + (v >> 63 & dist) + b;
         }
         /**
-        * @brief 64bit•‚“®¬”“_Œ^v‚ğb`e‚ÌŠÔ‚ÅŒJ‚è•Ô‚µ
-        * @param[in] b ƒXƒJƒ‰[
-        * @param[in] e ƒXƒJƒ‰[
-        * @param[in] v ƒXƒJƒ‰[
-        * @return ƒ‰ƒbƒvƒAƒ‰ƒEƒ“ƒh‚³‚ê‚½’l
+        * @brief 64bitæµ®å‹•å°æ•°ç‚¹å‹vã‚’bï½eã®é–“ã§ç¹°ã‚Šè¿”ã—
+        * @param[in] b ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] e ã‚¹ã‚«ãƒ©ãƒ¼
+        * @param[in] v ã‚¹ã‚«ãƒ©ãƒ¼
+        * @return ãƒ©ãƒƒãƒ—ã‚¢ãƒ©ã‚¦ãƒ³ãƒ‰ã•ã‚ŒãŸå€¤
         */
         static EVOLUTION_INLINE f64 wrap(f64 b, f64 e, f64 v)
         {
@@ -145,11 +145,11 @@ namespace EVOLUTION{
             return v + *(f64*)&ofs + b;
         }
         /**
-        * @brief V‚ğMin`Max‚ÌŠÔ‚ÅƒNƒ‰ƒ“ƒv
-        * @param[in] Min Å­’l
-        * @param[in] Max Å‘å’l
-        * @param[in] V ’l
-        * @return ƒNƒ‰ƒ“ƒv‚³‚ê‚½’l
+        * @brief Vã‚’Minï½Maxã®é–“ã§ã‚¯ãƒ©ãƒ³ãƒ—
+        * @param[in] Min æœ€å°‘å€¤
+        * @param[in] Max æœ€å¤§å€¤
+        * @param[in] V å€¤
+        * @return ã‚¯ãƒ©ãƒ³ãƒ—ã•ã‚ŒãŸå€¤
         */
         static EVOLUTION_INLINE f32 clampf(f32 Min, f32 Max, f32 V)
         {
@@ -161,11 +161,11 @@ namespace EVOLUTION{
             return *(f32*)&r;
         }
         /**
-        * @brief V‚ğMin`Max‚ÌŠÔ‚ÅƒNƒ‰ƒ“ƒv
-        * @param[in] Min Å­’l
-        * @param[in] Max Å‘å’l
-        * @param[in] V ’l
-        * @return ƒNƒ‰ƒ“ƒv‚³‚ê‚½’l
+        * @brief Vã‚’Minï½Maxã®é–“ã§ã‚¯ãƒ©ãƒ³ãƒ—
+        * @param[in] Min æœ€å°‘å€¤
+        * @param[in] Max æœ€å¤§å€¤
+        * @param[in] V å€¤
+        * @return ã‚¯ãƒ©ãƒ³ãƒ—ã•ã‚ŒãŸå€¤
         */
         static EVOLUTION_INLINE void clampf(f32 Min, f32 Max, f32* V)
         {
@@ -178,9 +178,9 @@ namespace EVOLUTION{
         }
 
         /**
-        * @brief 0`1‚ÌŠÔ‚ÉƒNƒ‰ƒ“ƒv
-        * @param[in] _X ƒXƒJƒ‰[
-        * @return ƒNƒ‰ƒ“ƒv‚³‚ê‚½’l
+        * @brief 0ï½1ã®é–“ã«ã‚¯ãƒ©ãƒ³ãƒ—
+        * @param[in] _X ã‚¹ã‚«ãƒ©ãƒ¼
+        * @return ã‚¯ãƒ©ãƒ³ãƒ—ã•ã‚ŒãŸå€¤
         */
         static EVOLUTION_INLINE f32 saturatef(const f32& _X)
         {
@@ -192,8 +192,8 @@ namespace EVOLUTION{
             return *(f32*)&l;
         }
         /**
-        * @brief 0`1‚ÌŠÔ‚ÉƒNƒ‰ƒ“ƒv
-        * @param[input] _X ƒXƒJƒ‰[
+        * @brief 0ï½1ã®é–“ã«ã‚¯ãƒ©ãƒ³ãƒ—
+        * @param[input] _X ã‚¹ã‚«ãƒ©ãƒ¼
         */
         static EVOLUTION_INLINE void saturatef(f32* _X)
         {
@@ -205,42 +205,42 @@ namespace EVOLUTION{
             *_X = *(f32*)&l;
         }
         /**
-        * @brief Šp“x‚ğƒ‰ƒWƒAƒ“‚É•ÏŠ·‚µ‚Ü‚·
-        * @param[int] deg Šp“x
-        * @return ƒ‰ƒWƒAƒ“
+        * @brief è§’åº¦ã‚’ãƒ©ã‚¸ã‚¢ãƒ³ã«å¤‰æ›ã—ã¾ã™
+        * @param[int] deg è§’åº¦
+        * @return ãƒ©ã‚¸ã‚¢ãƒ³
         */
         static EVOLUTION_INLINE f32 ToRadian(f32 deg){ return (deg)* (PI_F / 180.0f); }
         /**
-        * @brief ƒ‰ƒWƒAƒ“‚ğŠp“x‚É•ÏŠ·‚µ‚Ü‚·
-        * @param[int] rad ƒ‰ƒWƒAƒ“Šp
-        * @return Šp“x
+        * @brief ãƒ©ã‚¸ã‚¢ãƒ³ã‚’è§’åº¦ã«å¤‰æ›ã—ã¾ã™
+        * @param[int] rad ãƒ©ã‚¸ã‚¢ãƒ³è§’
+        * @return è§’åº¦
         */
         static EVOLUTION_INLINE f32 ToDegree(f32 rad){ return (rad)* (180.0f / PI_F); }
         //*****************************************************************************
         //
-        //		Vector2ŠÖ˜A
+        //		Vector2é–¢é€£
         //
         //*****************************************************************************
         //*****************************************************************************
-        //		•ÏŠ·ŠÖ˜A
+        //		å¤‰æ›é–¢é€£
         //*****************************************************************************
         static EVOLUTION_INLINE f32 Vector2toEuler(const Vector2& vec)
         {
             return acosf(vec.x);
         }
         //*****************************************************************************
-        //		ŠÖ”ŠÖ˜A
+        //		é–¢æ•°é–¢é€£
         //*****************************************************************************
         static EVOLUTION_INLINE f32 Vector2Dot(const Vector2& from, const Vector2& dest){ return from.x*dest.x + from.y, dest.y; }
         static EVOLUTION_INLINE f32 Vector2Cross(const Vector2& from, const Vector2& dest){ return from.x*dest.y - dest.x*from.y; }
         static EVOLUTION_INLINE f32 Vector2LengthSq(const Vector2& vec){ return Vector2Dot(vec, vec); }
         static EVOLUTION_INLINE f32 Vector2Length(const Vector2& vec){ return sqrtf(Vector2LengthSq(vec)); }
         /**
-        * @brief ƒxƒNƒgƒ‹‚ğ”CˆÓ‚Ì’·‚³‚Å•¡»‚·‚é
-        * @param[out] out Œ‹‰ÊƒxƒNƒgƒ‹
-        * @param[in] in ƒxƒNƒgƒ‹
-        * @param[in] len ”CˆÓ‚Ì’·‚³
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä»»æ„ã®é•·ã•ã§è¤‡è£½ã™ã‚‹
+        * @param[out] out çµæœãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] in ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] len ä»»æ„ã®é•·ã•
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector2* Vector2SetLength(Vector2* out, const Vector2& in, f32 len)
         {
@@ -252,16 +252,16 @@ namespace EVOLUTION{
         static EVOLUTION_INLINE const Vector2* Vector2Normalize(Vector2* out, const Vector2& vec)
         {
             f32 len = Vector2Length(vec);
-            //ƒxƒNƒgƒ‹‚Ì‹——£‚ª‚O‚È‚çƒGƒ‰[
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®è·é›¢ãŒï¼ãªã‚‰ã‚¨ãƒ©ãƒ¼
             assert(len != 0.0f);
             *out = vec / len;
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹“¯m‚ªì‚éŠp“x‚ğ‹‚ß‚é
-        * @param[in] from Šp“x‚ğ‹‚ß‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹.
-        * @param[in] dest Šp“x‚ğ‹‚ß‚é‘ŠèƒxƒNƒgƒ‹.
-        * @return Šp“x.
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ãŒä½œã‚‹è§’åº¦ã‚’æ±‚ã‚ã‚‹
+        * @param[in] from è§’åº¦ã‚’æ±‚ã‚ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«.
+        * @param[in] dest è§’åº¦ã‚’æ±‚ã‚ã‚‹ç›¸æ‰‹ãƒ™ã‚¯ãƒˆãƒ«.
+        * @return è§’åº¦.
         */
         static EVOLUTION_INLINE f32 Vector2Degree(const Vector2& from, const Vector2& dest)
         {
@@ -271,11 +271,11 @@ namespace EVOLUTION{
             return angle;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹“¯m‚ğüŒ`•âŠÔ‚·‚é
-        * @param[out] out •âŠÔ‚³‚ê‚½ƒxƒNƒgƒ‹
-        * @param[in] from •âŠÔ‚·‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹
-        * @param[in] dest •âŠ®‚·‚é‘Šè‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã‚’ç·šå½¢è£œé–“ã™ã‚‹
+        * @param[out] out è£œé–“ã•ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] from è£œé–“ã™ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest è£œå®Œã™ã‚‹ç›¸æ‰‹ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector2* Vector2Lerp(Vector2* out, const Vector2& from, const Vector2& dest, f32 t)
         {
@@ -290,7 +290,7 @@ namespace EVOLUTION{
             return out;
         }
         //*****************************************************************************
-        //		ƒxƒNƒgƒ‹ì¬ŠÖ˜A
+        //		ãƒ™ã‚¯ãƒˆãƒ«ä½œæˆé–¢é€£
         //*****************************************************************************
         static EVOLUTION_INLINE const Vector2* Vector2fromEuler(Vector2* out, f32 r)
         {
@@ -300,44 +300,44 @@ namespace EVOLUTION{
         }
         //*****************************************************************************
         //
-        //		Vector3ŠÖ˜A
+        //		Vector3é–¢é€£
         //
         //*****************************************************************************
         //*****************************************************************************
-        //		•ÏŠ·ŠÖ˜A
+        //		å¤‰æ›é–¢é€£
         //*****************************************************************************
         /**
-        * @brief ƒxƒNƒgƒ‹‚©‚ç‹ÂŠp(pitchŠp)‚Æ•ûˆÊŠp(yawŠp)‚ğ‹‚ß‚é(ƒXƒP[ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚é‚ÆˆÓ}‚µ‚½Œ‹‰Ê‚É‚È‚ç‚È‚¢)
-        * @param[out] out ‹‚ß‚½Šp“x
-        * @param[in] in •ÏŠ·‚·‚éƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‹ã‚‰ä»°è§’(pitchè§’)ã¨æ–¹ä½è§’(yawè§’)ã‚’æ±‚ã‚ã‚‹(ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã‚‹ã¨æ„å›³ã—ãŸçµæœã«ãªã‚‰ãªã„)
+        * @param[out] out æ±‚ã‚ãŸè§’åº¦
+        * @param[in] in å¤‰æ›ã™ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3toEuler(Vector3* out, const Vector3& in)
         {
             float len;
-            // ƒxƒNƒgƒ‹‚Ì’·‚³‚ğ‹‚ß‚é
+            // ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
             len = sqrtf(in.x*in.x + in.y*in.y + in.z*in.z);
-            // ’·‚³‚ª‚O‚Ìê‡‚ÍƒGƒ‰[
+            // é•·ã•ãŒï¼ã®å ´åˆã¯ã‚¨ãƒ©ãƒ¼
             assert(len != 0.0f);
-            // ƒxƒNƒgƒ‹‚ğ³‹K‰»‚·‚é
+            // ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–ã™ã‚‹
             float X = in.x / len;
             float Y = in.y / len;
             float Z = in.z / len;
-            // ƒsƒbƒ`‚ÌŒvZ‚ğs‚¤
+            // ãƒ”ãƒƒãƒã®è¨ˆç®—ã‚’è¡Œã†
             out->x = asinf(-Y);
-            // ƒˆ[‚ÌŒvZ‚ğs‚¤
+            // ãƒ¨ãƒ¼ã®è¨ˆç®—ã‚’è¡Œã†
             out->y = atan2f(X, Z);
             return out;
         }
         //*****************************************************************************
-        //		ŠÖ”ŠÖ˜A
+        //		é–¢æ•°é–¢é€£
         //*****************************************************************************
         /**
-        * @brief ƒxƒNƒgƒ‹‚ÌŠOÏ‚ğ‹‚ß‚é
-        * @param[out] out ƒxƒNƒgƒ‹‚ÌŠOÏ
-        * @param[in] from ŠOÏ‚ğ‹‚ß‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹
-        * @param[in] dest ŠOÏ‚ğ‹‚ß‚é‘Šè‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®å¤–ç©ã‚’æ±‚ã‚ã‚‹
+        * @param[out] out ãƒ™ã‚¯ãƒˆãƒ«ã®å¤–ç©
+        * @param[in] from å¤–ç©ã‚’æ±‚ã‚ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest å¤–ç©ã‚’æ±‚ã‚ã‚‹ç›¸æ‰‹ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3Cross(Vector3* out, const Vector3& from, const Vector3& dest)
         {
@@ -348,39 +348,39 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì“àÏ‚ğ‹‚ß‚é
-        * @param[in] from “àÏ‚ğ‹‚ß‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹
-        * @param[in] dest “àÏ‚ğ‹‚ß‚é‘Šè‚ÌƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì“àÏ
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®å†…ç©ã‚’æ±‚ã‚ã‚‹
+        * @param[in] from å†…ç©ã‚’æ±‚ã‚ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest å†…ç©ã‚’æ±‚ã‚ã‚‹ç›¸æ‰‹ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®å†…ç©
         */
         static EVOLUTION_INLINE f32 Vector3Dot(const Vector3& from, const Vector3& dest)
         {
             return from.x*dest.x + from.y*dest.y + from.z*dest.z;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì’·‚³‚Ì“ñæ‚ğ‹‚ß‚é
-        * @param[in] val ’·‚³‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì’·‚³‚Ì“ñæ
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
+        * @param[in] val é•·ã•ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã®äºŒä¹—
         */
         static EVOLUTION_INLINE f32 Vector3LengthSq(const Vector3& val)
         {
             return Vector3Dot(val, val);
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì’·‚³‚ğ‹‚ß‚é
-        * @param[in] val ’·‚³‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì’·‚³
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
+        * @param[in] val é•·ã•ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•
         */
         static EVOLUTION_INLINE f32 Vector3Length(const Vector3& val)
         {
             return sqrtf(Vector3LengthSq(val));
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚ğ”CˆÓ‚Ì’·‚³‚Å•¡»‚·‚é
-        * @param[out] out Œ‹‰ÊƒxƒNƒgƒ‹
-        * @param[in] in ƒxƒNƒgƒ‹
-        * @param[in] len ”CˆÓ‚Ì’·‚³
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä»»æ„ã®é•·ã•ã§è¤‡è£½ã™ã‚‹
+        * @param[out] out çµæœãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] in ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] len ä»»æ„ã®é•·ã•
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3SetLength(Vector3* out, const Vector3& in, f32 len)
         {
@@ -388,43 +388,43 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì‹——£‚Ì“ñæ‚ğ‹‚ß‚é
-        * @param[in] from ‹——£‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @param[in] dest ‹——£‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì‹——£‚Ì“ñæ
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®è·é›¢ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
+        * @param[in] from è·é›¢ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest è·é›¢ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®è·é›¢ã®äºŒä¹—
         */
         static EVOLUTION_INLINE f32 Vector3DistanceSq(const Vector3& from, const Vector3& dest)
         {
             return Vector3LengthSq(dest - from);
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì‹——£‚ğ‹‚ß‚é
-        * @param[in] from ‹——£‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @param[in] dest ‹——£‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì‹——£
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®è·é›¢ã‚’æ±‚ã‚ã‚‹
+        * @param[in] from è·é›¢ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest è·é›¢ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®è·é›¢
         */
         static EVOLUTION_INLINE f32 Vector3Distance(const Vector3& from, const Vector3& dest)
         {
             return Vector3Length(dest - from);
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì’·‚³‚ğ‹‚ß‚é
-        * @param[in] val ’·‚³‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì’·‚³
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
+        * @param[in] val é•·ã•ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•
         */
         static EVOLUTION_INLINE const Vector3* Vector3Normalize(Vector3* out, const Vector3& val)
         {
             f32 len = Vector3Length(val);
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚ª0‚È‚çƒGƒ‰[
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ãŒ0ãªã‚‰ã‚¨ãƒ©ãƒ¼
             //assert(len!=0.0f);
             *out = val / len;
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹“¯m‚ªì‚éŠp“x‚ğ‹‚ß‚é
-        * @param[in] from Šp“x‚ğ‹‚ß‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹.
-        * @param[in] dest Šp“x‚ğ‹‚ß‚é‘ŠèƒxƒNƒgƒ‹.
-        * @return Šp“x.
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ãŒä½œã‚‹è§’åº¦ã‚’æ±‚ã‚ã‚‹
+        * @param[in] from è§’åº¦ã‚’æ±‚ã‚ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«.
+        * @param[in] dest è§’åº¦ã‚’æ±‚ã‚ã‚‹ç›¸æ‰‹ãƒ™ã‚¯ãƒˆãƒ«.
+        * @return è§’åº¦.
         */
         static EVOLUTION_INLINE f32 Vector3Degree(const Vector3& from, const Vector3& dest)
         {
@@ -434,11 +434,11 @@ namespace EVOLUTION{
             return angle;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹“¯m‚ğüŒ`•âŠÔ‚·‚é
-        * @param[out] out •âŠÔ‚³‚ê‚½ƒxƒNƒgƒ‹
-        * @param[in] from •âŠÔ‚·‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹
-        * @param[in] dest •âŠ®‚·‚é‘Šè‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã‚’ç·šå½¢è£œé–“ã™ã‚‹
+        * @param[out] out è£œé–“ã•ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] from è£œé–“ã™ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest è£œå®Œã™ã‚‹ç›¸æ‰‹ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3Lerp(Vector3* out, const Vector3& from, const Vector3& dest, f32 t)
         {
@@ -448,32 +448,32 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹“¯m‚ğ‹…–ÊüŒ`•âŠÔ‚·‚é
-        * @param[out] out •âŠÔ‚³‚ê‚½ƒxƒNƒgƒ‹
-        * @param[in] from •âŠÔ‚·‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹
-        * @param[in] dest •âŠ®‚·‚é‘Šè‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã‚’çƒé¢ç·šå½¢è£œé–“ã™ã‚‹
+        * @param[out] out è£œé–“ã•ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] from è£œé–“ã™ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest è£œå®Œã™ã‚‹ç›¸æ‰‹ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3Slerp(Vector3* out, const Vector3& from, const Vector3& dest, f32 t)
         {
-            // 2ƒxƒNƒgƒ‹ŠÔ‚ÌŠp“xi‰sŠp‘¤j
+            // 2ãƒ™ã‚¯ãƒˆãƒ«é–“ã®è§’åº¦ï¼ˆé‹­è§’å´ï¼‰
             f32 angle = acosf(Vector3Dot(from, dest));
-            // sinƒÆ
+            // sinÎ¸
             f32 SinTh = sinf(angle);
-            // •âŠÔŒW”
+            // è£œé–“ä¿‚æ•°
             f32 Ps = sinf(angle * (1.0f - t));
             f32 Pe = sinf(angle * t);
             *out = (from  * Ps + dest * Pe) / SinTh;
-            // ˆê‰³‹K‰»‚µ‚Ä‹…–ÊüŒ`•âŠÔ‚É
+            // ä¸€å¿œæ­£è¦åŒ–ã—ã¦çƒé¢ç·šå½¢è£œé–“ã«
             return Vector3Normalize(out, *out);
         }
 
         /**
-        * ”½ËƒxƒNƒgƒ‹‚ğ‹‚ß‚é D
-        * @param[out] out ”½ËƒxƒNƒgƒ‹
-        * @param[in] front isƒxƒNƒgƒ‹
-        * @param [in]  normal –@üƒxƒNƒgƒ‹ D
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * åå°„ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹ ï¼
+        * @param[out] out åå°„ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] front é€²è¡Œãƒ™ã‚¯ãƒˆãƒ«
+        * @param [in]  normal æ³•ç·šãƒ™ã‚¯ãƒˆãƒ« ï¼
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3Reflect(Vector3* out, const Vector3& front, const Vector3& normal)
         {
@@ -484,12 +484,12 @@ namespace EVOLUTION{
         }
 
         /**
-        * ‹üÜƒxƒNƒgƒ‹‚ğ‹‚ß‚éD
-        * @param[out] out ‹üÜƒxƒNƒgƒ‹
-        * @param[in] front isƒxƒNƒgƒ‹
-        * @param [in]  normal –@üƒxƒNƒgƒ‹ D
-        * @param[in] Eta ‹üÜ—¦
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * å±ˆæŠ˜ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹ï¼
+        * @param[out] out å±ˆæŠ˜ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] front é€²è¡Œãƒ™ã‚¯ãƒˆãƒ«
+        * @param [in]  normal æ³•ç·šãƒ™ã‚¯ãƒˆãƒ« ï¼
+        * @param[in] Eta å±ˆæŠ˜ç‡
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3Refract(Vector3* out, const Vector3& front, const Vector3& normal, f32 Eta)
         {
@@ -508,18 +508,18 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief Ë‰eƒxƒNƒgƒ‹‚Ì’·‚³‚ğ‹‚ß‚é
-        * @param[in] from Ë‰e‚·‚éƒxƒNƒgƒ‹
-        * @param[in] dest Ë‰e‚³‚ê‚éƒxƒNƒgƒ‹
-        * @return Ë‰eƒxƒNƒgƒ‹‚Ì’·‚³
+        * @brief å°„å½±ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
+        * @param[in] from å°„å½±ã™ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest å°„å½±ã•ã‚Œã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å°„å½±ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•
         */
         static EVOLUTION_INLINE f32 Vector3ProjectionLength(const Vector3& from, const Vector3& dest){ return Vector3Dot(from, dest) / Vector3Length(dest); }
         /**
-        * @brief Ë‰eƒxƒNƒgƒ‹‚ğ‹‚ß‚é
-        * @param[out] out Ë‰eƒxƒNƒgƒ‹
-        * @param[in] from Ë‰e‚·‚éƒxƒNƒgƒ‹
-        * @param[in] dest Ë‰e‚³‚ê‚éƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief å°„å½±ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
+        * @param[out] out å°„å½±ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] from å°„å½±ã™ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest å°„å½±ã•ã‚Œã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* Vector3Projection(Vector3* out, const Vector3& from, const Vector3& dest)
         {
@@ -527,14 +527,14 @@ namespace EVOLUTION{
             return out;
         }
         //*****************************************************************************
-        //		ƒxƒNƒgƒ‹ì¬ŠÖ˜A
+        //		ãƒ™ã‚¯ãƒˆãƒ«ä½œæˆé–¢é€£
         //*****************************************************************************
         /**
-        * @brief ‹ÂŠp(pitchŠp)‚Æ•ûˆÊŠp(yawŠp)‚©‚çƒxƒNƒgƒ‹‚ğ‹‚ß‚é
-        * @param[out] out ‹‚ß‚½ƒxƒNƒgƒ‹
-        * @param[in] pitch ƒsƒbƒ`Šp(X²)
-        * @param[in] yaw ƒˆ[Šp(Y²)
-        * @return ‹‚ß‚½ƒxƒNƒgƒ‹.
+        * @brief ä»°è§’(pitchè§’)ã¨æ–¹ä½è§’(yawè§’)ã‹ã‚‰ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
+        * @param[out] out æ±‚ã‚ãŸãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] pitch ãƒ”ãƒƒãƒè§’(Xè»¸)
+        * @param[in] yaw ãƒ¨ãƒ¼è§’(Yè»¸)
+        * @return æ±‚ã‚ãŸãƒ™ã‚¯ãƒˆãƒ«.
         */
         static EVOLUTION_INLINE const Vector3* Vector3fromPitchYaw(Vector3* out, f32 pitch, f32 yaw)
         {
@@ -545,51 +545,51 @@ namespace EVOLUTION{
         }
         //*****************************************************************************
         //
-        //		Vector4ŠÖ˜A
+        //		Vector4é–¢é€£
         //
         //*****************************************************************************
         //*****************************************************************************
-        //		ŠÖ”ŠÖ˜A
+        //		é–¢æ•°é–¢é€£
         //*****************************************************************************
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì“àÏ‚ğ‹‚ß‚é
-        * @param[in] from “àÏ‚ğ‹‚ß‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹
-        * @param[in] dest “àÏ‚ğ‹‚ß‚é‘Šè‚ÌƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì“àÏ
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®å†…ç©ã‚’æ±‚ã‚ã‚‹
+        * @param[in] from å†…ç©ã‚’æ±‚ã‚ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest å†…ç©ã‚’æ±‚ã‚ã‚‹ç›¸æ‰‹ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®å†…ç©
         */
         static EVOLUTION_INLINE f32 Vector4Dot(const Vector4& from, const Vector4& dest){ return from.x*dest.x + from.y*dest.y + from.z*dest.z + from.w*dest.w; }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì’·‚³‚Ì“ñæ‚ğ‹‚ß‚é
-        * @param[in] vec ’·‚³‚Ì“ñæ‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì’·‚³‚Ì“ñæ
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
+        * @param[in] vec é•·ã•ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã®äºŒä¹—
         */
         static EVOLUTION_INLINE f32 Vector4LengthSq(const Vector4& vec){ return Vector4Dot(vec, vec); }
         /**
-        * @brief ƒxƒNƒgƒ‹‚Ì’·‚³‚ğ‹‚ß‚é
-        * @param[in] vec ’·‚³‚ğ‹‚ß‚éƒxƒNƒgƒ‹
-        * @return ƒxƒNƒgƒ‹‚Ì’·‚³
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
+        * @param[in] vec é•·ã•ã‚’æ±‚ã‚ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•
         */
         static EVOLUTION_INLINE f32 Vector4Length(const Vector4& vec){ return sqrtf(Vector4LengthSq(vec)); }
         /**
-        * @brief ƒxƒNƒgƒ‹‚ğ³‹K‰»‚·‚é
-        * @param[out] out ³‹K‰»‚µ‚½ƒxƒNƒgƒ‹
-        * @param[in] vec ³‹K‰»‚·‚éƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–ã™ã‚‹
+        * @param[out] out æ­£è¦åŒ–ã—ãŸãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] vec æ­£è¦åŒ–ã™ã‚‹ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector4* Vector4Normalize(Vector4* out, const Vector4& vec)
         {
             f32 len = Vector4Length(vec);
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚ª0‚È‚çƒGƒ‰[
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ãŒ0ãªã‚‰ã‚¨ãƒ©ãƒ¼
             assert(len != 0.0f);
             *out = vec / len;
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹“¯m‚ğüŒ`•âŠÔ‚·‚é
-        * @param[out] out •âŠÔ‚³‚ê‚½ƒxƒNƒgƒ‹
-        * @param[in] from •âŠÔ‚·‚é‚±‚¿‚ç‚ÌƒxƒNƒgƒ‹
-        * @param[in] dest •âŠ®‚·‚é‘Šè‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã‚’ç·šå½¢è£œé–“ã™ã‚‹
+        * @param[out] out è£œé–“ã•ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] from è£œé–“ã™ã‚‹ã“ã¡ã‚‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] dest è£œå®Œã™ã‚‹ç›¸æ‰‹ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector4* Vector4Lerp(Vector4* out, const Vector4& from, const Vector4& dest, f32 t)
         {
@@ -601,21 +601,21 @@ namespace EVOLUTION{
         }
         //*****************************************************************************
         //
-        //		s—ñŠÖ˜A
+        //		è¡Œåˆ—é–¢é€£
         //
         //*****************************************************************************
         //*****************************************************************************
-        //		•ÏŠ·ŠÖ˜A
+        //		å¤‰æ›é–¢é€£
         //*****************************************************************************
         /**
-        * @brief s—ñ‚ğƒNƒH[ƒ^ƒjƒIƒ“‚É•ÏŠ·‚·‚é(ƒXƒP[ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚é‚ÆˆÓ}‚µ‚½Œ‹‰Ê‚É‚È‚ç‚È‚¢)
-        * @param[out] q ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] mat ‰ñ“]s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã‚’ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«å¤‰æ›ã™ã‚‹(ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã‚‹ã¨æ„å›³ã—ãŸçµæœã«ãªã‚‰ãªã„)
+        * @param[out] q å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] mat å›è»¢è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* MatrixToQuaternion(Quaternion* q, const Matrix& mat)
         {
-            // Å‘å¬•ª‚ğŒŸõ
+            // æœ€å¤§æˆåˆ†ã‚’æ¤œç´¢
             f32 elem[4]; // 0:x, 1:y, 2:z, 3:w
             elem[0] = mat._11 - mat._22 - mat._33 + 1.0f;
             elem[1] = -mat._11 + mat._22 - mat._33 + 1.0f;
@@ -628,7 +628,7 @@ namespace EVOLUTION{
                     biggestIndex = i;
             }
 
-            // Å‘å—v‘f‚Ì’l‚ğZo
+            // æœ€å¤§è¦ç´ ã®å€¤ã‚’ç®—å‡º
             f32 v = sqrtf(elem[biggestIndex]) * 0.5f;
             (*q).m[biggestIndex] = v;
             f32 mult = 0.25f / v;
@@ -658,22 +658,22 @@ namespace EVOLUTION{
             return q;
         }
         /**
-        * @brief s—ñ‚©‚çƒIƒCƒ‰[Šp‚É•ÏŠ·(XYZƒI[ƒ_[s—ñê—p)(ƒXƒP[ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚é‚ÆˆÓ}‚µ‚½Œ‹‰Ê‚É‚È‚ç‚È‚¢)
-        * @param[out] out ƒIƒCƒ‰[Šp
-        * @param[in] mat ‰ñ“]s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã‹ã‚‰ã‚ªã‚¤ãƒ©ãƒ¼è§’ã«å¤‰æ›(XYZã‚ªãƒ¼ãƒ€ãƒ¼è¡Œåˆ—å°‚ç”¨)(ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã‚‹ã¨æ„å›³ã—ãŸçµæœã«ãªã‚‰ãªã„)
+        * @param[out] out ã‚ªã‚¤ãƒ©ãƒ¼è§’
+        * @param[in] mat å›è»¢è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* MatrixToEulerXYZ(Vector3* out, const Matrix& mat)
         {
             out->y = asinf(-mat._13);
             f32 C = cosf(out->y);
 
-            //cos(ƒÀ)‚ª0‚Å‚È‚¯‚ê‚Î
+            //cos(Î²)ãŒ0ã§ãªã‘ã‚Œã°
             if (absf(C) > FEQ_EPS) {
                 out->x = (mat._33 < 0) ? PI_F - asinf(mat._23 / C) : asinf(mat._23 / C);
                 out->z = atan2f(mat._12, mat._11);
             }
-            //cos(ƒÀ)‚ª0‚È‚ç‚Î
+            //cos(Î²)ãŒ0ãªã‚‰ã°
             else
             {
                 out->x = 0.0f;
@@ -683,22 +683,22 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief s—ñ‚©‚çƒIƒCƒ‰[Šp‚É•ÏŠ·(ZXYƒI[ƒ_[s—ñê—p)(ƒXƒP[ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚é‚ÆˆÓ}‚µ‚½Œ‹‰Ê‚É‚È‚ç‚È‚¢)
-        * @param[out] out ƒIƒCƒ‰[Šp
-        * @param[in] mat ‰ñ“]s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã‹ã‚‰ã‚ªã‚¤ãƒ©ãƒ¼è§’ã«å¤‰æ›(ZXYã‚ªãƒ¼ãƒ€ãƒ¼è¡Œåˆ—å°‚ç”¨)(ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã‚‹ã¨æ„å›³ã—ãŸçµæœã«ãªã‚‰ãªã„)
+        * @param[out] out ã‚ªã‚¤ãƒ©ãƒ¼è§’
+        * @param[in] mat å›è»¢è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* MatrixToEulerZXY(Vector3* out, const Matrix& mat)
         {
             out->x = asinf(-mat._32);
             f32 C = cosf(out->x);
 
-            //cos(ƒÀ)‚ª0‚Å‚È‚¯‚ê‚Î
+            //cos(Î²)ãŒ0ã§ãªã‘ã‚Œã°
             if (absf(C) > FEQ_EPS) {
                 out->z = (mat._22 < 0) ? PI_F - asinf(mat._12 / C) : asinf(mat._12 / C);
                 out->y = atan2f(mat._31, mat._33);
             }
-            //cos(ƒÀ)‚ª0‚È‚ç‚Î
+            //cos(Î²)ãŒ0ãªã‚‰ã°
             else
             {
                 out->z = 0.0f;
@@ -708,12 +708,12 @@ namespace EVOLUTION{
             return out;
         }
         //*****************************************************************************
-        //		ŠÖ”ŠÖ˜A
+        //		é–¢æ•°é–¢é€£
         //*****************************************************************************
         /**
-        * @brief 4x4s—ñ‚Ìs—ñ®‚ÌŒvZ
-        * @param[in] mat Œ³‚Ìs—ñ
-        * @return s—ñ®‚Ì’l
+        * @brief 4x4è¡Œåˆ—ã®è¡Œåˆ—å¼ã®è¨ˆç®—
+        * @param[in] mat å…ƒã®è¡Œåˆ—
+        * @return è¡Œåˆ—å¼ã®å€¤
         */
         static EVOLUTION_INLINE f32 MatrixDet(const Matrix& mat)
         {
@@ -727,16 +727,16 @@ namespace EVOLUTION{
                 - mat._14*mat._21*mat._32*mat._43 - mat._14*mat._22*mat._33*mat._41 - mat._14*mat._23*mat._31*mat._42;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚ğ(x,y,z,1)‚Æ‚µ‚Äs—ñ•ÏŠ·
-        * in‚Æout‚ª“¯ˆê‚Å‚àˆÀ‘S
-        * @param[out] out •ÏŠ·Œã‚ÌƒxƒNƒgƒ‹
-        * @param[in] i •ÏŠ·‘O‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’(x,y,z,1)ã¨ã—ã¦è¡Œåˆ—å¤‰æ›
+        * inã¨outãŒåŒä¸€ã§ã‚‚å®‰å…¨
+        * @param[out] out å¤‰æ›å¾Œã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] i å¤‰æ›å‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector4* MatrixVec3Transform(Vector4* out, const Vector3& in, const Matrix& mat)
         {
             Vector4 work;
-            //•ÏŠ·
+            //å¤‰æ›
             work.x = in.x*mat._11 + in.y*mat._21 + in.z*mat._31 + mat._41;
             work.y = in.x*mat._12 + in.y*mat._22 + in.z*mat._32 + mat._42;
             work.z = in.x*mat._13 + in.y*mat._23 + in.z*mat._33 + mat._43;
@@ -745,53 +745,53 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚ğ(x,y,z,1)‚Æ‚µ‚Äs—ñ•ÏŠ·A•ÏŠ·Œãw‚ÉË‰e‚·‚é
-        * in‚Æout‚ª“¯ˆê‚Å‚àˆÀ‘S
-        * @param[out] out •ÏŠ·Œã‚ÌƒxƒNƒgƒ‹
-        * @param[in] i •ÏŠ·‘O‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’(x,y,z,1)ã¨ã—ã¦è¡Œåˆ—å¤‰æ›ã€å¤‰æ›å¾Œwã«å°„å½±ã™ã‚‹
+        * inã¨outãŒåŒä¸€ã§ã‚‚å®‰å…¨
+        * @param[out] out å¤‰æ›å¾Œã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] i å¤‰æ›å‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* MatrixVec3TransformCoord(Vector3* out, const Vector3& in, const Matrix& mat)
         {
             Vector3 work;
-            //•ÏŠ·
+            //å¤‰æ›
             work.x = in.x*mat._11 + in.y*mat._21 + in.z*mat._31 + mat._41;
             work.y = in.x*mat._12 + in.y*mat._22 + in.z*mat._32 + mat._42;
             work.z = in.x*mat._13 + in.y*mat._23 + in.z*mat._33 + mat._43;
             float w = in.x*mat._14 + in.y*mat._24 + in.z*mat._34 + mat._44;
-            //Ë‰e
+            //å°„å½±
             *out = work / w;
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚ğ(x,y,z,0)‚Æ‚µ‚Äs—ñ•ÏŠ·
-        * in‚Æout‚ª“¯ˆê‚Å‚àˆÀ‘S
-        * @param[out] out •ÏŠ·Œã‚ÌƒxƒNƒgƒ‹
-        * @param[in] i •ÏŠ·‘O‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’(x,y,z,0)ã¨ã—ã¦è¡Œåˆ—å¤‰æ›
+        * inã¨outãŒåŒä¸€ã§ã‚‚å®‰å…¨
+        * @param[out] out å¤‰æ›å¾Œã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] i å¤‰æ›å‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* MatrixVec3TransformNormal(Vector3* out, const Vector3& in, const Matrix& mat)
         {
             Vector3 work;
-            //•ÏŠ·
+            //å¤‰æ›
             work.x = in.x*mat._11 + in.y*mat._21 + in.z*mat._31;
             work.y = in.x*mat._12 + in.y*mat._22 + in.z*mat._32;
             work.z = in.x*mat._13 + in.y*mat._23 + in.z*mat._33;
-            //Ë‰e
+            //å°„å½±
             *out = work;
             return out;
         }
         /**
-        * @brief ƒxƒNƒgƒ‹‚ğs—ñ•ÏŠ·
-        * in‚Æout‚ª“¯ˆê‚Å‚àˆÀ‘S
-        * @param[out] out •ÏŠ·Œã‚ÌƒxƒNƒgƒ‹
-        * @param[in] i •ÏŠ·‘O‚ÌƒxƒNƒgƒ‹
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’è¡Œåˆ—å¤‰æ›
+        * inã¨outãŒåŒä¸€ã§ã‚‚å®‰å…¨
+        * @param[out] out å¤‰æ›å¾Œã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] i å¤‰æ›å‰ã®ãƒ™ã‚¯ãƒˆãƒ«
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector4* MatrixVec4Transform(Vector4* out, const Vector4& in, const Matrix& mat)
         {
             Vector4 work;
-            //•ÏŠ·
+            //å¤‰æ›
             work.x = in.x*mat._11 + in.y*mat._21 + in.z*mat._31 + in.w*mat._41;
             work.y = in.x*mat._12 + in.y*mat._22 + in.z*mat._32 + in.w*mat._42;
             work.z = in.x*mat._13 + in.y*mat._23 + in.z*mat._33 + in.w*mat._43;
@@ -801,30 +801,30 @@ namespace EVOLUTION{
         }
 
         //*****************************************************************************
-        //		¬•ªæ“¾ŠÖ˜A
+        //		æˆåˆ†å–å¾—é–¢é€£
         //*****************************************************************************
         /**
-        * @brief s—ñ‚ÌŠg‘å¬•ª‚ğæ“¾‚·‚é
-        * @param[out] out Šg‘å¬•ª
-        * @param[in] in s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã®æ‹¡å¤§æˆåˆ†ã‚’å–å¾—ã™ã‚‹
+        * @param[out] out æ‹¡å¤§æˆåˆ†
+        * @param[in] in è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* MatrixGetScale(Vector3* out, const Matrix& in)
         {
-            //X²³‹K‰»(ƒXƒP[ƒ‹•ª‰ğ)
+            //Xè»¸æ­£è¦åŒ–(ã‚¹ã‚±ãƒ¼ãƒ«åˆ†è§£)
             out->x = sqrtf(in._11*in._11 + in._12*in._12 + in._13*in._13);
-            //Y²³‹K‰»(ƒXƒP[ƒ‹•ª‰ğ)
+            //Yè»¸æ­£è¦åŒ–(ã‚¹ã‚±ãƒ¼ãƒ«åˆ†è§£)
             out->y = sqrtf(in._21*in._21 + in._22*in._22 + in._23*in._23);
-            //Z²³‹K‰»(ƒXƒP[ƒ‹•ª‰ğ)
+            //Zè»¸æ­£è¦åŒ–(ã‚¹ã‚±ãƒ¼ãƒ«åˆ†è§£)
             out->z = sqrtf(in._31*in._31 + in._32*in._32 + in._33*in._33);
             return out;
         }
         /**
-        * @brief s—ñ‚ÌŠe²ƒxƒNƒgƒ‹‚ğæ“¾
-        * @param[out] right X²ƒxƒNƒgƒ‹
-        * @param[out] up Y²ƒxƒNƒgƒ‹
-        * @param[out] front Z²ƒxƒNƒgƒ‹
-        * @param[in] in s—ñ
+        * @brief è¡Œåˆ—ã®å„è»¸ãƒ™ã‚¯ãƒˆãƒ«ã‚’å–å¾—
+        * @param[out] right Xè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[out] up Yè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[out] front Zè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] in è¡Œåˆ—
         */
         static EVOLUTION_INLINE void MatrixGetAxis(Vector3* right, Vector3* up, Vector3* front, const Matrix& in)
         {
@@ -833,10 +833,10 @@ namespace EVOLUTION{
             front->x = in._31;	front->y = in._32;	front->z = in._33;
         }
         /**
-        * @brief s—ñ‚Ì•½sˆÚ“®¬•ª‚ğæ“¾‚·‚é
-        * @param[out] out Šg‘å¬•ª
-        * @param[in] in s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã®å¹³è¡Œç§»å‹•æˆåˆ†ã‚’å–å¾—ã™ã‚‹
+        * @param[out] out æ‹¡å¤§æˆåˆ†
+        * @param[in] in è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* MatrixGetTranslation(Vector3* out, const Matrix& in)
         {
@@ -844,17 +844,17 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief s—ñ‚ğ•ª‰ğA•ª‰ğ‚Å‚«‚È‚¯‚ê‚ÎƒGƒ‰[
-        * @param[out] s Šg‘å¬•ª
-        * @param[out] q ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[out] p •½sˆÚ“®¬•ª
-        * @param[in] in s—ñ
+        * @brief è¡Œåˆ—ã‚’åˆ†è§£ã€åˆ†è§£ã§ããªã‘ã‚Œã°ã‚¨ãƒ©ãƒ¼
+        * @param[out] s æ‹¡å¤§æˆåˆ†
+        * @param[out] q å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[out] p å¹³è¡Œç§»å‹•æˆåˆ†
+        * @param[in] in è¡Œåˆ—
         */
         static EVOLUTION_INLINE void MatrixDecompose(Vector3* s, Quaternion* q, Vector3* p, const Matrix& in)
         {
             Matrix work = in;
             MatrixGetScale(s, work);
-            //ƒXƒP[ƒ‹‚ªˆê‚Â‚Å‚à0‚È‚ç•ª‰ğ‚Å‚«‚È‚¢‚Æ‚µ‚ÄƒGƒ‰[
+            //ã‚¹ã‚±ãƒ¼ãƒ«ãŒä¸€ã¤ã§ã‚‚0ãªã‚‰åˆ†è§£ã§ããªã„ã¨ã—ã¦ã‚¨ãƒ©ãƒ¼
             assert(s->x != 0.0f || s->y != 0.0f || s->z != 0.0f);
             work._11 /= s->x;	work._12 /= s->x;	work._13 /= s->x;
             work._21 /= s->y;	work._22 /= s->y;	work._23 /= s->y;
@@ -863,12 +863,12 @@ namespace EVOLUTION{
             MatrixGetTranslation(p, in);
         }
         /**
-        * @brief s—ñ‚ğƒxƒNƒgƒ‹‚É•ª‰ğ
-        * @param[out] x X²ƒxƒNƒgƒ‹
-        * @param[out] y Y²ƒxƒNƒgƒ‹
-        * @param[out] z Z²ƒxƒNƒgƒ‹
-        * @param[out] p •½sˆÚ“®¬•ª
-        * @param[in] in s—ñ
+        * @brief è¡Œåˆ—ã‚’ãƒ™ã‚¯ãƒˆãƒ«ã«åˆ†è§£
+        * @param[out] x Xè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[out] y Yè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[out] z Zè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[out] p å¹³è¡Œç§»å‹•æˆåˆ†
+        * @param[in] in è¡Œåˆ—
         */
         static EVOLUTION_INLINE void MatrixDecompose(Vector3* x, Vector3* y, Vector3* z, Vector3* p, const Matrix& in)
         {
@@ -876,10 +876,10 @@ namespace EVOLUTION{
             MatrixGetTranslation(p, in);
         }
         /**
-        * @brief s—ñ‚Ì‰ñ“]¬•ª‚ğ³‹K‰»‚µ‚½s—ñ‚ğì¬‚·‚é(ƒXƒP[ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚Ä‚à³‚µ‚¢’l‚ª‹A‚é‚±‚Æ‚ª•Ûá‚³‚ê‚Ä‚¢‚é)
-        * @param[out] out ³‹K‰»‚³‚ê‚½‰ñ“]s—ñ
-        * @param[in] in s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã®å›è»¢æˆåˆ†ã‚’æ­£è¦åŒ–ã—ãŸè¡Œåˆ—ã‚’ä½œæˆã™ã‚‹(ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã¦ã‚‚æ­£ã—ã„å€¤ãŒå¸°ã‚‹ã“ã¨ãŒä¿éšœã•ã‚Œã¦ã„ã‚‹)
+        * @param[out] out æ­£è¦åŒ–ã•ã‚ŒãŸå›è»¢è¡Œåˆ—
+        * @param[in] in è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixDecomposeR(Matrix* out, const Matrix& in)
         {
@@ -892,25 +892,25 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief s—ñ‚ğ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“‚É•ª‰ğ‚·‚é(ƒXƒP[ƒŠƒ“ƒO‚³‚ê‚Ä‚¢‚Ä‚à³‚µ‚¢’l‚ª‹A‚é‚±‚Æ‚ª•Ûá‚³‚ê‚Ä‚¢‚é)
-        * @param[out] out ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] in s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã‚’å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«åˆ†è§£ã™ã‚‹(ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ã•ã‚Œã¦ã„ã¦ã‚‚æ­£ã—ã„å€¤ãŒå¸°ã‚‹ã“ã¨ãŒä¿éšœã•ã‚Œã¦ã„ã‚‹)
+        * @param[out] out å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] in è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* MatrixDecomposeR(Quaternion* out, const Matrix& in)
         {
             Matrix work;
-            //‰ñ“]¬•ª‚ğs—ñ‚É•ª‰ğ
+            //å›è»¢æˆåˆ†ã‚’è¡Œåˆ—ã«åˆ†è§£
             MatrixDecomposeR(&work, in);
-            //ƒNƒH[ƒ^ƒjƒIƒ“‚É•ÏŠ·
+            //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«å¤‰æ›
             return MatrixToQuaternion(out, work);
         }
         //*****************************************************************************
-        //		s—ñì¬ŠÖ˜A
+        //		è¡Œåˆ—ä½œæˆé–¢é€£
         //*****************************************************************************
         /**
-        * @brief 4x4s—ñ‚Ì’PˆÊs—ñ‰»
-        * @param[inout] mat s—ñ
+        * @brief 4x4è¡Œåˆ—ã®å˜ä½è¡Œåˆ—åŒ–
+        * @param[inout] mat è¡Œåˆ—
         */
         static EVOLUTION_INLINE void MatrixIdentity(Matrix* mat)
         {
@@ -920,17 +920,17 @@ namespace EVOLUTION{
             mat->m[3][0] = 0.0f;		mat->m[3][1] = 0.0f;		mat->m[3][2] = 0.0f;		mat->m[3][3] = 1.0f;
         }
         /**
-        * @brief 4x4s—ñ‚Ì‹ts—ñ‚ğ‹‚ß‚éA‹ts—ñ‚ª‘¶İ‚µ‚È‚¯‚ê‚ÎƒGƒ‰[
-        * @param[out] out ‹ts—ñ
-        * @param[out] m Œ³‚Ìs—ñ
-        * @return ‹ts—ñ‚Ì‘¶İ
+        * @brief 4x4è¡Œåˆ—ã®é€†è¡Œåˆ—ã‚’æ±‚ã‚ã‚‹ã€é€†è¡Œåˆ—ãŒå­˜åœ¨ã—ãªã‘ã‚Œã°ã‚¨ãƒ©ãƒ¼
+        * @param[out] out é€†è¡Œåˆ—
+        * @param[out] m å…ƒã®è¡Œåˆ—
+        * @return é€†è¡Œåˆ—ã®å­˜åœ¨
         */
         static EVOLUTION_INLINE void MatrixInverse(Matrix* out, const Matrix& m)
         {
             Matrix mat = m;
             f32 det = MatrixDet(mat);
 
-            //s—ñ®‚ª0‚È‚ç‹ts—ñ‚ª‘¶İ‚µ‚È‚¢‚Æ‚µ‚ÄƒGƒ‰[
+            //è¡Œåˆ—å¼ãŒ0ãªã‚‰é€†è¡Œåˆ—ãŒå­˜åœ¨ã—ãªã„ã¨ã—ã¦ã‚¨ãƒ©ãƒ¼
             //assert(Math::absf(det) > FEQ_EPS);
 
             f32 inv_det = 1.0f / det;
@@ -957,15 +957,15 @@ namespace EVOLUTION{
 
         }
         /**
-        * @brief s—ñ‚Ì‰ñ“]¬•ª‚ğ³‹K‰»‚·‚éA³‹K‰»‚Å‚«‚È‚¯‚ê‚ÎƒGƒ‰[
-        * @param[inout] m s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è¡Œåˆ—ã®å›è»¢æˆåˆ†ã‚’æ­£è¦åŒ–ã™ã‚‹ã€æ­£è¦åŒ–ã§ããªã‘ã‚Œã°ã‚¨ãƒ©ãƒ¼
+        * @param[inout] m è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixNormalize(Matrix* m)
         {
             Vector3 s;
             MatrixGetScale(&s, *m);
-            //ƒXƒP[ƒ‹‚ªˆê‚Â‚Å‚à0‚È‚ç³‹K‰»‚Å‚«‚È‚¢‚Æ‚µ‚ÄƒGƒ‰[
+            //ã‚¹ã‚±ãƒ¼ãƒ«ãŒä¸€ã¤ã§ã‚‚0ãªã‚‰æ­£è¦åŒ–ã§ããªã„ã¨ã—ã¦ã‚¨ãƒ©ãƒ¼
             //assert(s.x!=0.0f || s.y!=0.0f || s.z!=0.0f);
             m->_11 = m->_11 / s.x;	m->_12 = m->_12 / s.x;	m->_13 = m->_13 / s.x;	m->_14 = 0.0f;
             m->_21 = m->_21 / s.y;	m->_22 = m->_22 / s.y;	m->_23 = m->_23 / s.y;	m->_24 = 0.0f;
@@ -973,10 +973,10 @@ namespace EVOLUTION{
             return m;
         }
         /**
-        * @brief “]’us—ñì¬
-        * @param[out] out “]’uŒãs—ñ
-        * @param[in] in s—ñ
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief è»¢ç½®è¡Œåˆ—ä½œæˆ
+        * @param[out] out è»¢ç½®å¾Œè¡Œåˆ—
+        * @param[in] in è¡Œåˆ—
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixTranspose(Matrix* out, const Matrix& in)
         {
@@ -986,10 +986,10 @@ namespace EVOLUTION{
         }
 
         /**
-        * @brief X²‰ñ“]s—ñì¬
-        * @param[out] out ‰ñ“]s—ñ
-        * @param[in] r X‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief Xè»¸å›è»¢è¡Œåˆ—ä½œæˆ
+        * @param[out] out å›è»¢è¡Œåˆ—
+        * @param[in] r Xå›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixRotationX(Matrix* out, f32 r)
         {
@@ -1004,10 +1004,10 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief Y²‰ñ“]s—ñì¬
-        * @param[out] out ‰ñ“]s—ñ
-        * @param[in] r Y‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief Yè»¸å›è»¢è¡Œåˆ—ä½œæˆ
+        * @param[out] out å›è»¢è¡Œåˆ—
+        * @param[in] r Yå›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixRotationY(Matrix* out, f32 r)
         {
@@ -1022,10 +1022,10 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief Z²‰ñ“]s—ñì¬
-        * @param[out] out ‰ñ“]s—ñ
-        * @param[in] r Z‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief Zè»¸å›è»¢è¡Œåˆ—ä½œæˆ
+        * @param[out] out å›è»¢è¡Œåˆ—
+        * @param[in] r Zå›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixRotationZ(Matrix* out, f32 r)
         {
@@ -1040,10 +1040,10 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief XYZ²‰ñ“]s—ñì¬(XYZƒI[ƒ_[)
-        * @param[out] out ‰ñ“]s—ñ
-        * @param[in] a ‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief XYZè»¸å›è»¢è¡Œåˆ—ä½œæˆ(XYZã‚ªãƒ¼ãƒ€ãƒ¼)
+        * @param[out] out å›è»¢è¡Œåˆ—
+        * @param[in] a å›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixRotationXYZ(Matrix* out, const Vector3& a)
         {
@@ -1061,10 +1061,10 @@ namespace EVOLUTION{
         }
 
         /**
-        * @brief XYZ²‰ñ“]s—ñì¬(ZXYƒI[ƒ_[)
-        * @param[out] out ‰ñ“]s—ñ
-        * @param[in] a ‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief XYZè»¸å›è»¢è¡Œåˆ—ä½œæˆ(ZXYã‚ªãƒ¼ãƒ€ãƒ¼)
+        * @param[out] out å›è»¢è¡Œåˆ—
+        * @param[in] a å›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixRotationZXY(Matrix* out, const Vector3& a)
         {
@@ -1082,11 +1082,11 @@ namespace EVOLUTION{
         }
 
         /**
-        * @brief ”CˆÓ²‰ñ“]s—ñì¬
-        * @param[out] out ‰ñ“]s—ñ
-        * @param[in] axis ‰ñ“]²
-        * @param[in] r ‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ä»»æ„è»¸å›è»¢è¡Œåˆ—ä½œæˆ
+        * @param[out] out å›è»¢è¡Œåˆ—
+        * @param[in] axis å›è»¢è»¸
+        * @param[in] r å›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* MatrixAxisRotation(Matrix* out, const Vector3& axis, f32 r)
         {
@@ -1117,17 +1117,17 @@ namespace EVOLUTION{
         }
         //*****************************************************************************
         //
-        //		ƒNƒH[ƒ^ƒjƒIƒ“ŠÖ˜A
+        //		ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³é–¢é€£
         //
         //*****************************************************************************
         //*****************************************************************************
-        //		•ÏŠ·ŠÖ˜A
+        //		å¤‰æ›é–¢é€£
         //*****************************************************************************
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚ğs—ñ‚É•ÏŠ·‚·‚é
-        * @param[out] out ‰ñ“]s—ñ
-        * @param[in] q ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’è¡Œåˆ—ã«å¤‰æ›ã™ã‚‹
+        * @param[out] out å›è»¢è¡Œåˆ—
+        * @param[in] q ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Matrix* QuaternionToMatrix(Matrix* out, const Quaternion& q)
         {
@@ -1166,10 +1166,10 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚©‚çƒIƒCƒ‰[Šp‚É•ÏŠ·(XYZƒI[ƒ_[s—ñê—p)
-        * @param[out] out ƒIƒCƒ‰[Šp
-        * @param[in] q ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‹ã‚‰ã‚ªã‚¤ãƒ©ãƒ¼è§’ã«å¤‰æ›(XYZã‚ªãƒ¼ãƒ€ãƒ¼è¡Œåˆ—å°‚ç”¨)
+        * @param[out] out ã‚ªã‚¤ãƒ©ãƒ¼è§’
+        * @param[in] q ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* QuaternionToEulerXYZ(Vector3* out, const Quaternion& q)
         {
@@ -1178,10 +1178,10 @@ namespace EVOLUTION{
             return MatrixToEulerXYZ(out, work);
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚©‚çƒIƒCƒ‰[Šp‚É•ÏŠ·(ZXYƒI[ƒ_[s—ñê—p)
-        * @param[out] out ƒIƒCƒ‰[Šp
-        * @param[in] q ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‹ã‚‰ã‚ªã‚¤ãƒ©ãƒ¼è§’ã«å¤‰æ›(ZXYã‚ªãƒ¼ãƒ€ãƒ¼è¡Œåˆ—å°‚ç”¨)
+        * @param[out] out ã‚ªã‚¤ãƒ©ãƒ¼è§’
+        * @param[in] q ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* QuaternionToEulerZXY(Vector3* out, const Quaternion& q)
         {
@@ -1190,54 +1190,54 @@ namespace EVOLUTION{
             return MatrixToEulerZXY(out, work);
         }
         //*****************************************************************************
-        //		ŠÖ”ŠÖ˜A
+        //		é–¢æ•°é–¢é€£
         //*****************************************************************************
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚Ì“àÏ
-        * @param[in] q1 ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] q2 ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return “àÏ
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®å†…ç©
+        * @param[in] q1 ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] q2 ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å†…ç©
         */
         static EVOLUTION_INLINE f32 QuaternionDot(const Quaternion& q1, const Quaternion& q2)
         {
             return q1.x*q2.x + q1.y*q2.y + q1.z*q2.z + q1.w*q2.w;
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚Ì’·‚³‚Ì“ñæ‚ğæ“¾
-        * @param[in] q ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return ’·‚³‚Ì“ñæ
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®é•·ã•ã®äºŒä¹—ã‚’å–å¾—
+        * @param[in] q ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return é•·ã•ã®äºŒä¹—
         */
         static EVOLUTION_INLINE f32 QuaternionLengthSq(const Quaternion& q)
         {
             return QuaternionDot(q, q);
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚Ì’·‚³‚ğæ“¾
-        * @param[in] q ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return ’·‚³
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®é•·ã•ã‚’å–å¾—
+        * @param[in] q ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return é•·ã•
         */
         static EVOLUTION_INLINE f32 QuaternionLength(const Quaternion& q)
         {
             return sqrtf(QuaternionLengthSq(q));
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ““¯m‚Ì‡¬
-        * q1‚Ì‰ñ“]‚ÌŒã‚ÉAq2‚Ì‰ñ“]‚ğ‚µ‚½Œ‹‰Ê‚ğŒvZ
-        * @param[in] q1 Å‰‚Ì‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] q2 Ÿ‚Ì‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return ‰ñ“]Œ‹‰Ê‚ÌƒNƒH[ƒ^ƒjƒIƒ“
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³åŒå£«ã®åˆæˆ
+        * q1ã®å›è»¢ã®å¾Œã«ã€q2ã®å›è»¢ã‚’ã—ãŸçµæœã‚’è¨ˆç®—
+        * @param[in] q1 æœ€åˆã®å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] q2 æ¬¡ã®å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å›è»¢çµæœã®ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
         */
         static EVOLUTION_INLINE Quaternion QuaternionComp(const Quaternion& q1, const Quaternion& q2){ return q2*q1; }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚Ì‹…–ÊüŒ`•âŠÔ
-        * @param[out] out •âŠÔŒã‚ÌƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] q1 ‘æˆêƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] q2 ‘æ“ñƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®çƒé¢ç·šå½¢è£œé–“
+        * @param[out] out è£œé–“å¾Œã®ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] q1 ç¬¬ä¸€ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] q2 ç¬¬äºŒã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionSlerp(Quaternion* out, const Quaternion& q1, const Quaternion& q2, f32 t)
         {
-            //	“àÏ
+            //	å†…ç©
             float dot = q1.x*q2.x + q1.y*q2.y + q1.z*q2.z + q1.w*q2.w;
             float ss = 1.0f - (dot * dot);
             if (ss <= 0.0f)
@@ -1251,25 +1251,25 @@ namespace EVOLUTION{
                 Target = -Target;
                 dot = -dot;
             }
-            //	“àÏ’l•â³
+            //	å†…ç©å€¤è£œæ­£
             if (dot > 1.0f)
             {
                 dot = 1.0f;
             }
-            //	•âŠÔŠ„‡ŒvZ
+            //	è£œé–“å‰²åˆè¨ˆç®—
             float ph = acosf(dot);
             float s = 1.0f / sinf(ph);
             float s1 = sinf(ph * (1.0f - t)) * s;
             float s2 = sinf(ph *  t) * s;
             *out = q1*s1 + Target*s2;
-            //	•âŠÔ
+            //	è£œé–“
             return out;
         }
         /*
-        * @brief ƒxƒNƒgƒ‹‚ğƒNƒH[ƒ^ƒjƒIƒ“‚Å‰ñ“]‚³‚¹‚é
-        * @param[out] out ‰ñ“]ŒãƒxƒNƒgƒ‹
-        * @param[in] in ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ãƒ™ã‚¯ãƒˆãƒ«ã‚’ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã§å›è»¢ã•ã›ã‚‹
+        * @param[out] out å›è»¢å¾Œãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] in ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Vector3* QuaternionVec3Rotation(Vector3* out, const Quaternion& q)
         {
@@ -1277,13 +1277,13 @@ namespace EVOLUTION{
             return out;
         }
         //*****************************************************************************
-        //		¬•ªæ“¾ŠÖ˜A
+        //		æˆåˆ†å–å¾—é–¢é€£
         //*****************************************************************************
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚Ì²‚Æ‰ñ“]Šp‚É•ª‰ğ‚·‚é
-        * @param[out] axis ²
-        * @param[out] rad ‰ñ“]Šp
-        * @param[in] ƒNƒH[ƒ^ƒjƒIƒ“
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®è»¸ã¨å›è»¢è§’ã«åˆ†è§£ã™ã‚‹
+        * @param[out] axis è»¸
+        * @param[out] rad å›è»¢è§’
+        * @param[in] ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
         */
         static EVOLUTION_INLINE void QuaternionDecompose(Vector3* axis, f32* rad, const Quaternion& q){
             *rad = acosf(q.w);
@@ -1293,12 +1293,12 @@ namespace EVOLUTION{
             *rad *= 2.0f;
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚ğp¨ƒxƒNƒgƒ‹‚É•ª‰ğ‚·‚é
-        * s—ñ‚É•ÏŠ·‚µ‚Äæ“¾‚·‚é‚æ‚è‚Í¸“x‚Íˆ«‚¢‚ª‚‘¬
-        * @param[out] right X²ƒxƒNƒgƒ‹
-        * @param[out] up Y²ƒxƒNƒgƒ‹
-        * @param[out] front Z²ƒxƒNƒgƒ‹
-        * @param[in] ƒNƒH[ƒ^ƒjƒIƒ“
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’å§¿å‹¢ãƒ™ã‚¯ãƒˆãƒ«ã«åˆ†è§£ã™ã‚‹
+        * è¡Œåˆ—ã«å¤‰æ›ã—ã¦å–å¾—ã™ã‚‹ã‚ˆã‚Šã¯ç²¾åº¦ã¯æ‚ªã„ãŒé«˜é€Ÿ
+        * @param[out] right Xè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[out] up Yè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[out] front Zè»¸ãƒ™ã‚¯ãƒˆãƒ«
+        * @param[in] ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
         */
         static EVOLUTION_INLINE void QuaternionDecompose(Vector3* right, Vector3* up, Vector3* front, const Quaternion& q){
             f32 x2 = q.x + q.x;
@@ -1318,12 +1318,12 @@ namespace EVOLUTION{
             front->z = 1.0f - (xx + yy);
         }
         //*****************************************************************************
-        //		s—ñì¬ŠÖ˜A
+        //		è¡Œåˆ—ä½œæˆé–¢é€£
         //*****************************************************************************
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚ğ’PˆÊ‰»
-        * @param[out] q ’PˆÊ‰»‚·‚éƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’å˜ä½åŒ–
+        * @param[out] q å˜ä½åŒ–ã™ã‚‹ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionIdentity(Quaternion* q)
         {
@@ -1334,10 +1334,10 @@ namespace EVOLUTION{
             return q;
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚ğ‹¤–ğƒNƒH[ƒ^ƒjƒIƒ“‚Å•Ô‚·(-x,-y,-z,w)
-        * @param[out] out ‹¤–ğ‰»‚³‚ê‚½ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] in ƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’å…±å½¹ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã§è¿”ã™(-x,-y,-z,w)
+        * @param[out] out å…±å½¹åŒ–ã•ã‚ŒãŸã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] in ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionConjugate(Quaternion* out, const Quaternion& in)
         {
@@ -1348,34 +1348,34 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚ğ³‹K‰»
-        * @param[out] out ³‹K‰»‚³‚ê‚½ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] in ³‹K‰»‚·‚éƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶(³‹K‰»‚Å‚«‚È‚¯‚ê‚ÎNULL‚ª‹A‚é)
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’æ­£è¦åŒ–
+        * @param[out] out æ­£è¦åŒ–ã•ã‚ŒãŸã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] in æ­£è¦åŒ–ã™ã‚‹ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜(æ­£è¦åŒ–ã§ããªã‘ã‚Œã°NULLãŒå¸°ã‚‹)
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionNormalize(Quaternion* out, const Quaternion& in)
         {
             f32 len = QuaternionLength(in);
-            //’·‚³‚ª0‚È‚ç³‹K‰»‚Å‚«‚È‚¢‚Æ‚µ‚ÄƒGƒ‰[
+            //é•·ã•ãŒ0ãªã‚‰æ­£è¦åŒ–ã§ããªã„ã¨ã—ã¦ã‚¨ãƒ©ãƒ¼
             assert(len != 0.0f);
             *out = in / len;
             return out;
         }
         /**
-        * @brief ƒNƒH[ƒ^ƒjƒIƒ“‚ğ‹t”‰»
-        * @param[out] out ‹t”‰»‚³‚ê‚½ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] in ‹t”‰»‚·‚éƒNƒH[ƒ^ƒjƒIƒ“
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’é€†æ•°åŒ–
+        * @param[out] out é€†æ•°åŒ–ã•ã‚ŒãŸã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] in é€†æ•°åŒ–ã™ã‚‹ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionInverse(Quaternion* out, const Quaternion& in)
         {
             *out = (*QuaternionConjugate(out, in)) / QuaternionLengthSq(in);
         }
         /**
-        * @brief X²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“‚ğì¬
-        * @param[out] out ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] rad ‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief Xè»¸å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆ
+        * @param[out] out å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] rad å›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionRotationX(Quaternion* out, float rad)
         {
@@ -1387,10 +1387,10 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief Y²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“‚ğì¬
-        * @param[out] out ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] rad ‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief Yè»¸å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆ
+        * @param[out] out å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] rad å›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionRotationY(Quaternion* out, float rad)
         {
@@ -1402,10 +1402,10 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief Z²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“‚ğì¬
-        * @param[out] out ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] rad ‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief Zè»¸å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆ
+        * @param[out] out å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] rad å›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionRotationZ(Quaternion* out, float rad)
         {
@@ -1417,12 +1417,12 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief XYZ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“‚ğì¬
-        * @param[out] out ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] sx x‰ñ“]Šp
-        * @param[in] sy y‰ñ“]Šp
-        * @param[in] sz z‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief XYZå›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆ
+        * @param[out] out å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] sx xå›è»¢è§’
+        * @param[in] sy yå›è»¢è§’
+        * @param[in] sz zå›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionRotationXYZ(Quaternion* out, const Vector3& angle)
         {
@@ -1441,12 +1441,12 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ZXY‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“‚ğì¬
-        * @param[out] out ‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] sx x‰ñ“]Šp
-        * @param[in] sy y‰ñ“]Šp
-        * @param[in] sz z‰ñ“]Šp
-        * @return o—ÍŒ‹‰Ê‚Æ“¯‚¶
+        * @brief ZXYå›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆ
+        * @param[out] out å›è»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] sx xå›è»¢è§’
+        * @param[in] sy yå›è»¢è§’
+        * @param[in] sz zå›è»¢è§’
+        * @return å‡ºåŠ›çµæœã¨åŒã˜
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionRotationZXY(Quaternion* out, const Vector3& angle)
         {
@@ -1465,10 +1465,10 @@ namespace EVOLUTION{
             return out;
         }
         /**
-        * @brief ”CˆÓ‚Ì²‚Æ‰ñ“]Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ğì¬‚·‚é
-        * @param[out] out ƒNƒH[ƒ^ƒjƒIƒ“
-        * @param[in] axis ”CˆÓ‚Ì²
-        * @param[in] rad ‰ñ“]Šp
+        * @brief ä»»æ„ã®è»¸ã¨å›è»¢è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹
+        * @param[out] out ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³
+        * @param[in] axis ä»»æ„ã®è»¸
+        * @param[in] rad å›è»¢è§’
         */
         static EVOLUTION_INLINE const Quaternion* QuaternionAxisRotation(Quaternion* out, const Vector3 &axis, f32 rad){
             f32 d = rad * 0.5f;

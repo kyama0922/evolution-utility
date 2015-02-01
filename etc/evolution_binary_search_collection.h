@@ -1,4 +1,4 @@
-﻿#ifndef __EVOLUTION_BINARY_SEARCH_COLLECTION_H__
+#ifndef __EVOLUTION_BINARY_SEARCH_COLLECTION_H__
 #define __EVOLUTION_BINARY_SEARCH_COLLECTION_H__
 
 #include <evolution_type.h>
@@ -80,8 +80,8 @@ namespace EVOLUTION{
                 mp_collection->ReCreateTable(table_count);
             }
             //テーブルの追加
-            void AddCreateTable(u32 magnification = 2){
-                mp_collection->AddCreateTable(magnification);
+            void AddTable(u32 magnification = 2){
+                mp_collection->AddTable(magnification);
             }
             //中身をソートします。(基数ソート)
             void Sort(){

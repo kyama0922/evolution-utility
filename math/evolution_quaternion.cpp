@@ -8,7 +8,7 @@ using namespace EVOLUTION::MATH;
 //
 //--------------------------------------------------------------------------------------------------
 //*****************************************************************************
-//		ŠÖ”
+//		é–¢æ•°
 //*****************************************************************************
 float Quaternion::Length() const { return sqrtf(this->LengthSq()); }
 const Quaternion* Quaternion::SLerp(const Quaternion& q, f32 t)
@@ -16,45 +16,45 @@ const Quaternion* Quaternion::SLerp(const Quaternion& q, f32 t)
     return QuaternionSlerp(this, *this, q, t);
 }
 //*****************************************************************************
-//		¬•ª‘€ìŠÖ˜A
+//		æˆåˆ†æ“ä½œé–¢é€£
 //*****************************************************************************
-//ƒIƒCƒ‰[Šp‚©‚çXŽ²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“ì¬
+//ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰Xè»¸å›žè»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½œæˆ
 const Quaternion* Quaternion::SetRX(f32 rad)
 {
     return QuaternionRotationX(this, rad);
 }
-//ƒIƒCƒ‰[Šp‚©‚çYŽ²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“ì¬
+//ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰Yè»¸å›žè»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½œæˆ
 const Quaternion* Quaternion::SetRY(f32 rad)
 {
     return QuaternionRotationY(this, rad);
 }
-//ƒIƒCƒ‰[Šp‚©‚çZŽ²‰ñ“]ƒNƒH[ƒ^ƒjƒIƒ“ì¬
+//ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰Zè»¸å›žè»¢ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½œæˆ
 const Quaternion* Quaternion::SetRZ(f32 rad)
 {
     return QuaternionRotationZ(this, rad);
 }
-//ƒIƒCƒ‰[Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é(XYZƒI[ƒ_[)
+//ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹(XYZã‚ªãƒ¼ãƒ€ãƒ¼)
 const Quaternion* Quaternion::SetRXYZ(f32 sx, f32 sy, f32 sz)
 {
     return QuaternionRotationXYZ(this, Vector3(sx, sy, sz));
 }
-//ƒIƒCƒ‰[Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é(ZXYƒI[ƒ_[)
+//ã‚ªã‚¤ãƒ©ãƒ¼è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹(ZXYã‚ªãƒ¼ãƒ€ãƒ¼)
 const Quaternion* Quaternion::SetRZXY(f32 sx, f32 sy, f32 sz)
 {
     return QuaternionRotationZXY(this, Vector3(sx, sy, sz));
 }
-//”CˆÓ‚ÌŽ²‚Æ‰ñ“]Šp‚©‚çƒNƒH[ƒ^ƒjƒIƒ“‚ðì¬‚·‚é
+//ä»»æ„ã®è»¸ã¨å›žè»¢è§’ã‹ã‚‰ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’ä½œæˆã™ã‚‹
 const Quaternion* Quaternion::SetR(const Vector3 &axis, f32 rad){
     return QuaternionAxisRotation(this, axis, rad);
 }
 //*****************************************************************************
-//		¬•ªŽæ“¾ŠÖ˜A
+//		æˆåˆ†å–å¾—é–¢é€£
 //*****************************************************************************
-//ƒNƒH[ƒ^ƒjƒIƒ“‚ÌŽ²‚Æ‰ñ“]Šp‚É•ª‰ð‚·‚é
+//ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã®è»¸ã¨å›žè»¢è§’ã«åˆ†è§£ã™ã‚‹
 void Quaternion::Decompose(Vector3* axis, f32* rad) const {
     QuaternionDecompose(axis, rad, *this);
 }
-//ƒNƒH[ƒ^ƒjƒIƒ“‚ðŽp¨ƒxƒNƒgƒ‹‚É•ª‰ð‚·‚é
+//ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‚’å§¿å‹¢ãƒ™ã‚¯ãƒˆãƒ«ã«åˆ†è§£ã™ã‚‹
 void Quaternion::Decompose(Vector3* right, Vector3* up, Vector3* front) const {
     QuaternionDecompose(right, up, front, *this);
 }

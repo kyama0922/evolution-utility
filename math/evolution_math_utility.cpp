@@ -5,12 +5,12 @@ using namespace EVOLUTION::MATH;
 
 
 //*****************************************************************************
-//		変換関連
+//		螟画鋤髢｢騾｣
 //*****************************************************************************
-//クォータニオン変換
+//繧ｯ繧ｩ繝ｼ繧ｿ繝九が繝ｳ螟画鋤
 const Matrix* Quaternion::ToMatrix(Matrix* out)const
 {
-    //クォータニオンに変換
+    //繧ｯ繧ｩ繝ｼ繧ｿ繝九が繝ｳ縺ｫ螟画鋤
     return QuaternionToMatrix(out, *this);
 }
 Matrix Quaternion::ToMatrix()const{
@@ -18,12 +18,12 @@ Matrix Quaternion::ToMatrix()const{
     QuaternionToMatrix(&tmp, *this);
     return tmp;
 }
-//オイラー角変換
+//繧ｪ繧､繝ｩ繝ｼ隗貞､画鋤
 const Vector3* Quaternion::ToEulerXYZ(Vector3* out)const
 {
     return QuaternionToEulerXYZ(out, *this);
 }
-//オイラー角変換
+//繧ｪ繧､繝ｩ繝ｼ隗貞､画鋤
 const Vector3* Quaternion::ToEulerZXY(Vector3* out)const
 {
     return QuaternionToEulerZXY(out, *this);
@@ -31,7 +31,7 @@ const Vector3* Quaternion::ToEulerZXY(Vector3* out)const
 
 
 //*****************************************************************************
-//		変換関連
+//		螟画鋤髢｢騾｣
 //*****************************************************************************
 void MatrixWorld(Matrix& out, const Vector3 &pos, const Vector3 &angle, const Vector3 &scale){
     out.Identity();
@@ -91,7 +91,7 @@ void ScreenToWorld(Vector3& out_vec, int x, int y, int width, int heigth, const 
     vp._41 = width / 2.0f; vp._42 = heigth / 2.0f;
 
     MatrixInverse(&inv_viewport, vp);
-    //// 逆変換
+    //// 騾�螟画鋤
     Matrix work = inv_viewport * inv_prj * inv_view;
 
     Vector3 screen;

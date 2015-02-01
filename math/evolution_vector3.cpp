@@ -8,13 +8,13 @@ using namespace EVOLUTION::MATH;
 //
 //--------------------------------------------------------------------------------------------------
 //*****************************************************************************
-//		代入演算オペレータ
+//		莉｣蜈･貍皮ｮ励が繝壹Ξ繝ｼ繧ｿ
 //*****************************************************************************
 Vector3& Vector3::operator=(const Vector2& val){ this->x = val.x; this->y = val.y; return *this; }
 Vector3& Vector3::operator=(const Vector4& val){ this->x = val.x; this->y = val.y; this->z = val.z; return *this; }
 Vector3& Vector3::operator=(const Quaternion& val){ this->x = val.x; this->y = val.y; this->z = val.z; return *this; }
 //*****************************************************************************
-//		関数
+//		髢｢謨ｰ
 //*****************************************************************************
 const Vector3* Vector3::Cross(Vector3* out, const Vector3& in) const { return Vector3Cross(out, *this, in); }
 Vector3 Vector3::Cross(const Vector3& a, const Vector3& b){ Vector3 out; return *Vector3Cross(&out, a, b); }
@@ -38,12 +38,12 @@ const Vector3* Vector3::Reflect(const Vector3& front, const Vector3& normal){ re
 const Vector3* Vector3::Refract(const Vector3& front, const Vector3& normal, f32 Eta){ return Vector3Refract(this, front, normal, Eta); }
 const Vector3* Vector3::Projection(const Vector3& from, const Vector3& dest){ return Vector3Projection(this, from, dest); }
 //*****************************************************************************
-//		成分操作関連
+//		謌仙��謫堺ｽ憺未騾｣
 //*****************************************************************************
 const Vector3* Vector3::SetCross(const Vector3& in){ return Vector3Cross(this, *this, in); }
 const Vector3* Vector3::SetR(f32 pitch, f32 yaw){ return Vector3fromPitchYaw(this, pitch, yaw); }
 const Vector3* Vector3::SetLength(f32 len){ return Vector3SetLength(this, *this, len); }
 //*****************************************************************************
-//		変換関連
+//		螟画鋤髢｢騾｣
 //*****************************************************************************
 const Vector3* Vector3::ToEuler(Vector3* out)const{ return Vector3toEuler(out, *this); }

@@ -35,12 +35,12 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector3(const Vector4& val){ *this = val; }
             EVOLUTION_INLINE Vector3(const Quaternion& val){ *this = val; }
             //*****************************************************************************
-            //		‰‰ZƒIƒyƒŒ[ƒ^
+            //		æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector3 operator + () const { return Vector3(x, y, z); }
             EVOLUTION_INLINE Vector3 operator - () const { return Vector3(-x, -y, -z); }
             //*****************************************************************************
-            //		float‰‰ZƒIƒyƒŒ[ƒ^
+            //		floatæ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector3 operator+(f32 val)const{ return Vector3(this->x + val, this->y + val, this->z + val); }
             EVOLUTION_INLINE Vector3 operator-(f32 val)const{ return Vector3(this->x - val, this->y - val, this->z - val); }
@@ -51,14 +51,14 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector3& operator*=(f32 val){ this->x *= val; this->y *= val; this->z *= val; return *this; }
             EVOLUTION_INLINE Vector3& operator/=(f32 val){ this->x /= val; this->y /= val; this->z /= val; return *this; }
             //*****************************************************************************
-            //		VECTOR2‰‰ZƒIƒyƒŒ[ƒ^
+            //		VECTOR2æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector3 operator+(const Vector2& val)const{ return Vector3(this->x + val.x, this->y + val.y, this->z); }
             EVOLUTION_INLINE Vector3 operator-(const Vector2& val)const{ return Vector3(this->x - val.x, this->y - val.y, this->z); }
             EVOLUTION_INLINE Vector3& operator+=(const Vector2& val){ this->x += val.x; this->y += val.y; return *this; }
             EVOLUTION_INLINE Vector3& operator-=(const Vector2& val){ this->x -= val.x; this->y -= val.y; return *this; }
             //*****************************************************************************
-            //		Vector3‰‰ZƒIƒyƒŒ[ƒ^
+            //		Vector3æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             EVOLUTION_INLINE Vector3 operator+(const Vector3& val)const{ return Vector3(this->x + val.x, this->y + val.y, this->z + val.z); }
             EVOLUTION_INLINE Vector3 operator-(const Vector3& val)const{ return Vector3(this->x - val.x, this->y - val.y, this->z - val.z); }
@@ -66,71 +66,71 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Vector3& operator+=(const Vector3& val){ this->x += val.x; this->y += val.y; this->z += val.z; return *this; }
             EVOLUTION_INLINE Vector3& operator-=(const Vector3& val){ this->x -= val.x; this->y -= val.y; this->z -= val.z; return *this; }
             //*****************************************************************************
-            //		‘ã“ü‰‰ZƒIƒyƒŒ[ƒ^
+            //		ä»£å…¥æ¼”ç®—ã‚ªãƒšãƒ¬ãƒ¼ã‚¿
             //*****************************************************************************
             Vector3& operator=(const Vector2& val);
             EVOLUTION_INLINE Vector3& operator=(const Vector3& val){ this->x = val.x; this->y = val.y; this->z = val.z; return *this; }
             Vector3& operator=(const Vector4& val);
             Vector3& operator=(const Quaternion& val);
             //*****************************************************************************
-            //		ŠÖ”
+            //		é–¢æ•°
             //*****************************************************************************
 
-            //ƒxƒNƒgƒ‹“¯m‚Ì“àÏ
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®å†…ç©
             EVOLUTION_INLINE f32 Dot(const Vector3& val)const { return this->x*val.x + this->y*val.y + this->z*val.z; }
-            //ƒxƒNƒgƒ‹“¯m‚Ì“àÏ
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®å†…ç©
             static EVOLUTION_INLINE f32 Dot(const Vector3& val1, const Vector3& val2){ return val1.x*val2.x + val1.y*val2.y + val1.z*val2.z; }
-            //ƒxƒNƒgƒ‹“¯m‚ÌŠOÏ‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®å¤–ç©ã‚’æ±‚ã‚ã‚‹
             const Vector3* Cross(Vector3* out, const Vector3& in)const;
-            //ƒxƒNƒgƒ‹“¯m‚ÌŠOÏ‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®å¤–ç©ã‚’æ±‚ã‚ã‚‹
             static Vector3 Cross(const Vector3& a, const Vector3& b);
-            //ƒxƒNƒgƒ‹“¯m‚ÌŠOÏ‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®å¤–ç©ã‚’æ±‚ã‚ã‚‹
             static void Cross(Vector3& out, const Vector3& a, const Vector3& b);
-            //ƒxƒNƒgƒ‹ŠÔ‚ÌŠp“x‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«é–“ã®è§’åº¦ã‚’æ±‚ã‚ã‚‹
             f32 Degree(const Vector3& in)const;
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚Ì“ñæ‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
             EVOLUTION_INLINE f32 LengthSq()const{ return Dot(*this); }
-            //ƒxƒNƒgƒ‹‚Ì’·‚³‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã®é•·ã•ã‚’æ±‚ã‚ã‚‹
             f32 Length()const;
-            //ƒxƒNƒgƒ‹“¯m‚Ì‹——£‚Ì“ñæ‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®è·é›¢ã®äºŒä¹—ã‚’æ±‚ã‚ã‚‹
             f32 DistanceSq(const Vector3& vec)const;
-            //ƒxƒNƒgƒ‹“¯m‚Ì‹——£‚ğ‹‚ß‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®è·é›¢ã‚’æ±‚ã‚ã‚‹
             f32 Distance(const Vector3& vec)const;
-            //ƒxƒNƒgƒ‹‚ğ³‹K‰»‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ­£è¦åŒ–ã™ã‚‹
             const Vector3* Normalize();
-            //ƒxƒNƒgƒ‹“¯m‚ÌüŒ`•âŠÔ‚µ©g‚É‘ã“ü‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®ç·šå½¢è£œé–“ã—è‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Vector3* Lerp(const Vector3& from, const Vector3& dest, f32 t);
-            //ƒxƒNƒgƒ‹“¯m‚Ì‹…–ÊüŒ`•âŠÔ‚µ©g‚É‘ã“ü‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®çƒé¢ç·šå½¢è£œé–“ã—è‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Vector3* SLerp(const Vector3& from, const Vector3& dest, f32 t);
-            //ƒxƒNƒgƒ‹‚ğƒNƒH[ƒ^ƒjƒIƒ“‚Å‰ñ“]‚³‚¹‚Ä©g‚É‘ã“ü‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã§å›è»¢ã•ã›ã¦è‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Vector3* Rotate(const Quaternion& q);
-            // ƒxƒNƒgƒ‹‚ğ”CˆÓ‚Ì²‚ÆŠp“x‚Å‰ñ“]‚³‚¹‚Ä©g‚É‘ã“ü‚·‚é
+            // ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä»»æ„ã®è»¸ã¨è§’åº¦ã§å›è»¢ã•ã›ã¦è‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Vector3* Rotate(const Vector3& axis, f32 r);
-            // ƒxƒNƒgƒ‹‚ğ(x, y, z, 1)‚Æ‚µ‚Äs—ñ•ÏŠ·‚µ‚Ä©g‚É‘ã“ü‚·‚é
+            // ãƒ™ã‚¯ãƒˆãƒ«ã‚’(x, y, z, 1)ã¨ã—ã¦è¡Œåˆ—å¤‰æ›ã—ã¦è‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Vector3* Trans(const Matrix& m);
-            //ƒxƒNƒgƒ‹‚ğ(x,y,z,0)‚Æ‚µ‚Äs—ñ•ÏŠ·‚µ‚Ä©g‚É‘ã“ü‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’(x,y,z,0)ã¨ã—ã¦è¡Œåˆ—å¤‰æ›ã—ã¦è‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Vector3* Trans3x3(const Matrix& m);
-            //”½ËƒxƒNƒgƒ‹‚ğŠi”[‚·‚é
+            //åå°„ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ ¼ç´ã™ã‚‹
             const Vector3* Reflect(const Vector3& front, const Vector3& normal);
-            //‹üÜƒxƒNƒgƒ‹‚ğŠi”[‚·‚é
+            //å±ˆæŠ˜ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ ¼ç´ã™ã‚‹
             const Vector3* Refract(const Vector3& front, const Vector3& normal, f32 Eta);
-            //Ë‰eƒxƒNƒgƒ‹‚ğŠi”[‚·‚é
+            //å°„å½±ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ ¼ç´ã™ã‚‹
             const Vector3* Projection(const Vector3& from, const Vector3& dest);
             //*****************************************************************************
-            //		¬•ª‘€ìŠÖ˜A
+            //		æˆåˆ†æ“ä½œé–¢é€£
             //*****************************************************************************
 
-            //ƒxƒNƒgƒ‹“¯m‚ÌŠOÏ‚ğ‹‚ß‚½Œã©g‚É‘ã“ü‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«åŒå£«ã®å¤–ç©ã‚’æ±‚ã‚ãŸå¾Œè‡ªèº«ã«ä»£å…¥ã™ã‚‹
             const Vector3* SetCross(const Vector3& in);
-            //‹ÂŠp‚Æ•ûˆÊŠp‚©‚çƒxƒNƒgƒ‹‚ğ‹‚ß‚é
+            //ä»°è§’ã¨æ–¹ä½è§’ã‹ã‚‰ãƒ™ã‚¯ãƒˆãƒ«ã‚’æ±‚ã‚ã‚‹
             const Vector3* SetR(f32 pitch, f32 yaw);
-            //ƒxƒNƒgƒ‹‚ğ”CˆÓ‚Ì’·‚³‚É‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä»»æ„ã®é•·ã•ã«ã™ã‚‹
             const Vector3* SetLength(f32 len);
             //*****************************************************************************
-            //		•ÏŠ·ŠÖ˜A
+            //		å¤‰æ›é–¢é€£
             //*****************************************************************************
 
-            //ƒxƒNƒgƒ‹‚ğ‹ÂŠp‚Æ•ûˆÊŠp‚É•ÏŠ·‚·‚é
+            //ãƒ™ã‚¯ãƒˆãƒ«ã‚’ä»°è§’ã¨æ–¹ä½è§’ã«å¤‰æ›ã™ã‚‹
             const Vector3* ToEuler(Vector3* out)const;
         };
     }

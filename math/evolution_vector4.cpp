@@ -8,7 +8,7 @@ using namespace EVOLUTION::MATH;
 //
 //--------------------------------------------------------------------------------------------------
 //*****************************************************************************
-//		代入演算オペレータ
+//		莉｣蜈･貍皮ｮ励が繝壹Ξ繝ｼ繧ｿ
 //*****************************************************************************
 Vector4& Vector4::operator=(const Vector2& val){ this->x = val.x; this->y = val.y; return *this; }
 Vector4& Vector4::operator=(const Vector3& val){ this->x = val.x; this->y = val.y; this->z = val.z; return *this; }
@@ -17,7 +17,7 @@ Vector4& Vector4::operator=(const Quaternion& val){ this->x = val.x; this->y = v
 
 
 //*****************************************************************************
-//		関数
+//		髢｢謨ｰ
 //*****************************************************************************
 f32 Vector4::Length()const{ return Vector4Length(*this); }
 const Vector4* Vector4::Normalize(){ return Vector4Normalize(this, *this); }

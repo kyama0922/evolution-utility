@@ -7,7 +7,7 @@ using namespace EVOLUTION::MATH;
 //		Matrix
 //
 //--------------------------------------------------------------------------------------------------
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 Matrix::Matrix(){
     memset(&this->_11, 0, sizeof(Matrix));
 }
@@ -23,15 +23,15 @@ Matrix::Matrix(
     this->_31 = m31; this->_32 = m32; this->_33 = m33; this->_34 = m34;
     this->_41 = m41; this->_42 = m42; this->_43 = m43; this->_44 = m44;
 }
-//’PˆÊs—ñ‰»
+//å˜ä½è¡Œåˆ—åŒ–
 const Matrix* Matrix::Identity(){ MatrixIdentity(this); return this; }
-//‹ts—ñ‰»
+//é€†è¡Œåˆ—åŒ–
 const Matrix* Matrix::Inverse(){ MatrixInverse(this, *this); return this; }
-//³‹K‰»
+//æ­£è¦åŒ–
 const Matrix* Matrix::Normalize(){ return MatrixNormalize(this); }
-//s—ñ®æ“¾
+//è¡Œåˆ—å¼å–å¾—
 f32 Matrix::Determinant()const{ return MatrixDet(*this); }
-//ˆÚ“®¬•ª‚ğ‘ã“ü‚·‚é
+//ç§»å‹•æˆåˆ†ã‚’ä»£å…¥ã™ã‚‹
 const Matrix* Matrix::SetT(f32 x, f32 y, f32 z)
 {
     this->m[3][0] = x;
@@ -40,7 +40,7 @@ const Matrix* Matrix::SetT(f32 x, f32 y, f32 z)
     this->m[3][3] = 1.0f;
     return this;
 }
-//yaw pitch roll‰ñ“]¬•ª‘ã“ü(XYZƒI[ƒ_[)
+//yaw pitch rollå›è»¢æˆåˆ†ä»£å…¥(XYZã‚ªãƒ¼ãƒ€ãƒ¼)
 const Matrix* Matrix::SetRXYZ(f32 x, f32 y, f32 z)
 {
     f32	sx, sy, sz, cx, cy, cz;
@@ -53,7 +53,7 @@ const Matrix* Matrix::SetRXYZ(f32 x, f32 y, f32 z)
     this->_31 = (cx*sy*cz + sx*sz);			this->_32 = (cx*sy*sz + (-sx*cz));		this->_33 = (cx*cy);		this->_34 = (0.0f);
     return this;
 }
-//yaw pitch roll‰ñ“]¬•ª‘ã“ü(ZXYƒI[ƒ_[)
+//yaw pitch rollå›è»¢æˆåˆ†ä»£å…¥(ZXYã‚ªãƒ¼ãƒ€ãƒ¼)
 const Matrix* Matrix::SetRZXY(f32 x, f32 y, f32 z)
 {
     f32	sx, sy, sz, cx, cy, cz;
@@ -66,7 +66,7 @@ const Matrix* Matrix::SetRZXY(f32 x, f32 y, f32 z)
     this->_31 = (cx*sy);						this->_32 = (-sx);			this->_33 = (cx*cy);						this->_34 = (0.0f);
     return this;
 }
-//”CˆÓ²‰ñ“]‘ã“ü
+//ä»»æ„è»¸å›è»¢ä»£å…¥
 const Matrix* Matrix::SetR(const Vector3& axis, f32 r)
 {
     f32 s = sinf(r);
@@ -77,12 +77,12 @@ const Matrix* Matrix::SetR(const Vector3& axis, f32 r)
     this->_31 = (axis.z*axis.x)*(1.0f - c) + axis.y*s;		this->_32 = (axis.y*axis.z)*(1.0f - c) - axis.x*s;		this->_33 = (axis.z*axis.z)*(1.0f - c) + c;					this->_34 = 0.0f;
     return this;
 }
-//ƒNƒH[ƒ^ƒjƒIƒ“‚©‚ç‰ñ“]‘ã“ü
+//ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã‹ã‚‰å›è»¢ä»£å…¥
 const Matrix* Matrix::SetR(const Quaternion& q)
 {
     return QuaternionToMatrix(this, q);
 }
-//X²‰ñ“]‘ã“ü
+//Xè»¸å›è»¢ä»£å…¥
 const Matrix* Matrix::SetRX(f32 r)
 {
     f32 s = sinf(r);
@@ -93,7 +93,7 @@ const Matrix* Matrix::SetRX(f32 r)
     this->_31 = 0.0f;	this->_32 = -s;			this->_33 = c;			this->_34 = 0.0f;
     return this;
 }
-//Y²‰ñ“]‘ã“ü
+//Yè»¸å›è»¢ä»£å…¥
 const Matrix* Matrix::SetRY(f32 r)
 {
     f32 s = sinf(r);
@@ -104,7 +104,7 @@ const Matrix* Matrix::SetRY(f32 r)
     this->_31 = s;			this->_32 = 0.0f;	this->_33 = c;			this->_34 = 0.0f;
     return this;
 }
-//Z²‰ñ“]‘ã“ü
+//Zè»¸å›è»¢ä»£å…¥
 const Matrix* Matrix::SetRZ(f32 r)
 {
     f32 s = sinf(r);
@@ -118,24 +118,24 @@ const Matrix* Matrix::SetRZ(f32 r)
 
 
 //*****************************************************************************
-//		¬•ªæ“¾ŠÖ˜A
+//		æˆåˆ†å–å¾—é–¢é€£
 //*****************************************************************************
-//s—ñ‚ğƒXƒP[ƒ‹E‰ñ“]EˆÊ’u‚É•ª‰ğ
+//è¡Œåˆ—ã‚’ã‚¹ã‚±ãƒ¼ãƒ«ãƒ»å›è»¢ãƒ»ä½ç½®ã«åˆ†è§£
 void Matrix::Decompose(Vector3* s, Quaternion* q, Vector3* p)const
 {
     MatrixDecompose(s, q, p, *this);
 }
-//s—ñ‚ğƒxƒNƒgƒ‹‚É•ª‰ğ
+//è¡Œåˆ—ã‚’ãƒ™ã‚¯ãƒˆãƒ«ã«åˆ†è§£
 void Matrix::Decompose(Vector3* x, Vector3* y, Vector3* z, Vector3* p)const
 {
     MatrixDecompose(x, y, z, p, *this);
 }
-//‰ñ“]¬•ª‚ğs—ñ‚É•ª‰ğ
+//å›è»¢æˆåˆ†ã‚’è¡Œåˆ—ã«åˆ†è§£
 const Matrix* Matrix::DecomposeR(Matrix* m)const
 {
     return MatrixDecomposeR(m, *this);
 }
-//‰ñ“]¬•ª‚ğƒNƒH[ƒ^ƒjƒIƒ“‚É•ª‰ğ
+//å›è»¢æˆåˆ†ã‚’ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«åˆ†è§£
 const Quaternion* Matrix::DecomposeR(Quaternion* q)const
 {
     return MatrixDecomposeR(q, *this);
@@ -143,27 +143,27 @@ const Quaternion* Matrix::DecomposeR(Quaternion* q)const
 
 
 //*****************************************************************************
-//		•ÏŠ·ŠÖ˜A
+//		å¤‰æ›é–¢é€£
 //*****************************************************************************
-//ƒNƒH[ƒ^ƒjƒIƒ“•ÏŠ·
+//ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³å¤‰æ›
 Quaternion Matrix::ToQuaternion()const
 {
-    //ƒNƒH[ƒ^ƒjƒIƒ“‚É•ÏŠ·
+    //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«å¤‰æ›
     Quaternion q;
     MatrixToQuaternion(&q, *this);
     return q;
 }
 const Quaternion* Matrix::ToQuaternion(Quaternion* q)const
 {
-    //ƒNƒH[ƒ^ƒjƒIƒ“‚É•ÏŠ·
+    //ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã«å¤‰æ›
     return MatrixToQuaternion(q, *this);
 }
-//ƒIƒCƒ‰[Šp•ÏŠ·
+//ã‚ªã‚¤ãƒ©ãƒ¼è§’å¤‰æ›
 const Vector3* Matrix::ToEulerXYZ(Vector3* out)const
 {
     return MatrixToEulerXYZ(out, *this);
 }
-//ƒIƒCƒ‰[Šp•ÏŠ·
+//ã‚ªã‚¤ãƒ©ãƒ¼è§’å¤‰æ›
 const Vector3* Matrix::ToEulerZXY(Vector3* out)const
 {
     return MatrixToEulerZXY(out, *this);
@@ -227,7 +227,7 @@ void EVOLUTION::MATH::ScreenToWorld(Vector3& out_vec, int x, int y, int width, i
     vp._41 = width / 2.0f; vp._42 = heigth / 2.0f;
 
     MATH::MatrixInverse(&inv_viewport, vp);
-    //// ‹t•ÏŠ·
+    //// é€†å¤‰æ›
     Matrix work = inv_viewport * inv_prj * inv_view;
 
     Vector3 screen;

@@ -6,8 +6,8 @@ namespace EVOLUTION{
 
         struct JsonException{
             enum _EXCEPTION{
-                CONVERSION, //•ÏŠ·‚ÉŽ¸”s
-                NO_INSTANCE, //ƒCƒ“ƒXƒ^ƒ“ƒX‚È‚µ
+                CONVERSION, //å¤‰æ›ã«å¤±æ•—
+                NO_INSTANCE, //ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãªã—
             };
         };
 
@@ -15,63 +15,63 @@ namespace EVOLUTION{
         class IJsonValue :public IUnknown{
             EVOLUTION_NOT_DESTRUCTOR(IJsonValue);
         public:
-            //‚±‚ÌƒIƒuƒCƒFƒNƒg‚ÌCRC32‚ðŽæ“¾‚·‚é
+            //ã“ã®ã‚ªãƒ–ã‚¤ã‚§ã‚¯ãƒˆã®CRC32ã‚’å–å¾—ã™ã‚‹
             virtual u32 Crc32()const = 0;
-            //‚±‚ÌƒIƒuƒCƒFƒNƒg–¼‚ðŽæ“¾‚·‚é
+            //ã“ã®ã‚ªãƒ–ã‚¤ã‚§ã‚¯ãƒˆåã‚’å–å¾—ã™ã‚‹
             virtual const char* GetName()const = 0;
         };
 
         class IJsonArray : public IJsonValue{
             EVOLUTION_NOT_DESTRUCTOR(IJsonArray);
         public:
-            //Array‚Ì—v‘f”‚ð•Ô‚·
+            //Arrayã®è¦ç´ æ•°ã‚’è¿”ã™
             virtual  u32 GetCount()const = 0;
-            //ƒCƒ“ƒfƒbƒNƒX‚©‚çJsonObject‚ðŽæ“¾ŽQÆƒJƒEƒ“ƒg‚ª1‘‰Á‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é¦”jŠü‚·‚éê‡‚Í•K‚¸Release‚ðŒÄ‚Ño‚µ‚Ä‚­‚¾‚³‚¢)
+            //ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‹ã‚‰JsonObjectã‚’å–å¾—å‚ç…§ã‚«ã‚¦ãƒ³ãƒˆãŒ1å¢—åŠ ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹â€»ç ´æ£„ã™ã‚‹å ´åˆã¯å¿…ãšReleaseã‚’å‘¼ã³å‡ºã—ã¦ãã ã•ã„)
             virtual IJsonObject* GetJsonObject(u32 index) const = 0;
-            //ƒCƒ“ƒfƒbƒNƒX‚©‚çJsonArray‚ðŽæ“¾ŽQÆƒJƒEƒ“ƒg‚ª1‘‰Á‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é¦”jŠü‚·‚éê‡‚Í•K‚¸Release‚ðŒÄ‚Ño‚µ‚Ä‚­‚¾‚³‚¢)
+            //ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‹ã‚‰JsonArrayã‚’å–å¾—å‚ç…§ã‚«ã‚¦ãƒ³ãƒˆãŒ1å¢—åŠ ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹â€»ç ´æ£„ã™ã‚‹å ´åˆã¯å¿…ãšReleaseã‚’å‘¼ã³å‡ºã—ã¦ãã ã•ã„)
             virtual IJsonArray* GetJsonArray(u32 index)const = 0;
-            //ƒCƒ“ƒfƒbƒNƒX‚©‚ç”Žš‚ðŽæ“¾‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é)
+            //ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‹ã‚‰æ•°å­—ã‚’å–å¾—ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹)
             virtual double GetNumber(u32 index)const = 0;
-            //ƒCƒ“ƒfƒbƒNƒX‚©‚ç•¶Žš—ñ‚ðŽæ“¾‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é)
+            //ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‹ã‚‰æ–‡å­—åˆ—ã‚’å–å¾—ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹)
             virtual const char* GetString(u32 index)const = 0;
-            //ƒCƒ“ƒfƒbƒNƒX‚©‚ç^‹U‚ðŽæ“¾‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é)
+            //ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‹ã‚‰çœŸå½ã‚’å–å¾—ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹)
             virtual bool GetBoolean(u32 index)const = 0;
         };
 
         class IJsonObject : public IJsonValue{
             EVOLUTION_NOT_DESTRUCTOR(IJsonObject);
         public:
-            //–¼‘O‚©‚ç^‹U‚ðŽæ“¾‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é)
+            //åå‰ã‹ã‚‰çœŸå½ã‚’å–å¾—ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹)
             virtual const bool GetBoolean(const char* name)const = 0;
-            //–¼‘O‚©‚ç•¶Žš—ñ‚ðŽæ“¾‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é)
+            //åå‰ã‹ã‚‰æ–‡å­—åˆ—ã‚’å–å¾—ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹)
             virtual const char* GetString(const char* name)const = 0;
-            //–¼‘O‚©‚ç”Žš‚ðŽæ“¾‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é)
+            //åå‰ã‹ã‚‰æ•°å­—ã‚’å–å¾—ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹)
             virtual double GetNumber(const char* name)const = 0;
-            //–¼‘O‚©‚çJsonArray‚ðŽæ“¾ŽQÆƒJƒEƒ“ƒg‚ª1‘‰Á‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é¦”jŠü‚·‚éê‡‚Í•K‚¸Release‚ðŒÄ‚Ño‚µ‚Ä‚­‚¾‚³‚¢)
+            //åå‰ã‹ã‚‰JsonArrayã‚’å–å¾—å‚ç…§ã‚«ã‚¦ãƒ³ãƒˆãŒ1å¢—åŠ ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹â€»ç ´æ£„ã™ã‚‹å ´åˆã¯å¿…ãšReleaseã‚’å‘¼ã³å‡ºã—ã¦ãã ã•ã„)
             virtual IJsonArray* GetJsonArray(const char* name)const = 0;
-            //–¼‘O‚©‚çJsonObject‚ðŽæ“¾ŽQÆƒJƒEƒ“ƒg‚ª1‘‰Á‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é¦”jŠü‚·‚éê‡‚Í•K‚¸Release‚ðŒÄ‚Ño‚µ‚Ä‚­‚¾‚³‚¢)
+            //åå‰ã‹ã‚‰JsonObjectã‚’å–å¾—å‚ç…§ã‚«ã‚¦ãƒ³ãƒˆãŒ1å¢—åŠ ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹â€»ç ´æ£„ã™ã‚‹å ´åˆã¯å¿…ãšReleaseã‚’å‘¼ã³å‡ºã—ã¦ãã ã•ã„)
             virtual IJsonObject* GetJsonObject(const char* name)const = 0;
-            //–¼‘O‚©‚çƒIƒuƒWƒFƒNƒg‚ðŒŸõ‚·‚é
+            //åå‰ã‹ã‚‰ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¤œç´¢ã™ã‚‹
             virtual bool FindName(const char *pfind)const = 0;
-            //‚±‚ÌƒNƒ‰ƒX‚ªŽ‚Á‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg”‚ð•Ô‚·
+            //ã“ã®ã‚¯ãƒ©ã‚¹ãŒæŒã£ã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæ•°ã‚’è¿”ã™
             virtual u32 GetObjectCount()const = 0;
-            //ƒIƒuƒWƒFƒNƒg‚ªŽ‚Á‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg–¼‚ð•Ô‚·
+            //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒæŒã£ã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆåã‚’è¿”ã™
             virtual const char* GetObjectName(u32 index)const = 0;
         };
 
         class IJsonRoot : public IUnknown{
             EVOLUTION_NOT_DESTRUCTOR(IJsonRoot);
         public:
-            //JsonObject‚ðŽæ“¾ŽQÆƒJƒEƒ“ƒg‚ª1‘‰Á‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é¦”jŠü‚·‚éê‡‚Í•K‚¸Release‚ðŒÄ‚Ño‚µ‚Ä‚­‚¾‚³‚¢)
+            //JsonObjectã‚’å–å¾—å‚ç…§ã‚«ã‚¦ãƒ³ãƒˆãŒ1å¢—åŠ ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹â€»ç ´æ£„ã™ã‚‹å ´åˆã¯å¿…ãšReleaseã‚’å‘¼ã³å‡ºã—ã¦ãã ã•ã„)
             virtual IJsonObject* GetJsonObject() = 0;
-            //JsonArray‚ðŽæ“¾ŽQÆƒJƒEƒ“ƒg‚ª1‘‰Á‚·‚é(Žæ“¾‚ÉŽ¸”s‚·‚é‚ÆJsonException‚ðthrow‚·‚é¦”jŠü‚·‚éê‡‚Í•K‚¸Release‚ðŒÄ‚Ño‚µ‚Ä‚­‚¾‚³‚¢)
+            //JsonArrayã‚’å–å¾—å‚ç…§ã‚«ã‚¦ãƒ³ãƒˆãŒ1å¢—åŠ ã™ã‚‹(å–å¾—ã«å¤±æ•—ã™ã‚‹ã¨JsonExceptionã‚’throwã™ã‚‹â€»ç ´æ£„ã™ã‚‹å ´åˆã¯å¿…ãšReleaseã‚’å‘¼ã³å‡ºã—ã¦ãã ã•ã„)
             virtual IJsonArray* GetJsonArray() = 0;
         };
 
     }
 
     namespace FUNCTION{
-        //ƒoƒbƒtƒ@‚©‚ç‚Ì“Ç‚Ýž‚Ý
+        //ãƒãƒƒãƒ•ã‚¡ã‹ã‚‰ã®èª­ã¿è¾¼ã¿
         extern RESULT CreateJsonRoot(UTILITY::IJsonRoot** root, const char* json, u32 work_size = 256);
     }
 

@@ -9,9 +9,9 @@ RESULT EVOLUTION::FUNCTION::CreateJsonRoot(IJsonRoot** root, const char* json, u
     }
     catch (...)
     {
-        return EVOLUTION::RESULT::E_no_instance;
+        return _RESULT::E_no_instance;
     }
-    return EVOLUTION::RESULT::S_ok;
+    return _RESULT::S_ok;
 }
 
 
@@ -39,9 +39,9 @@ RESULT JsonRoot::QueryInterface(EVOLUTION_IID riid, void **ppvObject){
     else
     {
         *ppvObject = nullptr;
-        return RESULT::E_no_instance;
+        return _RESULT::E_no_instance;
     }
-    return RESULT::S_ok;
+    return _RESULT::S_ok;
 }
 
 u32 JsonRoot::Release(){

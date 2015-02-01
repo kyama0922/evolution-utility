@@ -1,4 +1,4 @@
-﻿#include "evolution_binary_search_collection.h"
+#include "evolution_binary_search_collection.h"
 
 using namespace EVOLUTION;
 using namespace EVOLUTION::UTILITY;

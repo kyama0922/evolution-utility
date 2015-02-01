@@ -29,9 +29,9 @@ RESULT JsonString::QueryInterface(EVOLUTION_IID riid, void **ppvObject){
     else
     {
         *ppvObject = nullptr;
-        return RESULT::E_no_instance;
+        return _RESULT::E_no_instance;
     }
-    return RESULT::S_ok;
+    return _RESULT::S_ok;
 }
 
 u32 JsonString::Release(){
@@ -54,7 +54,7 @@ JsonString::JsonString(u32 parent_crc, u32 index, JsonSerialize* serialize) : m_
 
     const char* s = str;
     char* d = this->m_str;
-    //ƒf[ƒ^ƒRƒs[
+    //ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼
     while (*d++ = *s++){}
 }
 
@@ -75,7 +75,7 @@ JsonString::JsonString(u32 parent_crc, const char* my_name, JsonSerialize* seria
 
     const char* s = str;
     char* d = this->m_str;
-    //ƒf[ƒ^ƒRƒs[
+    //ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼
     while (*d++ = *s++){}
 }
 
