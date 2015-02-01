@@ -56,7 +56,7 @@ namespace EVOLUTION{
             EVOLUTION_INLINE Color& operator=(const EVOLUTION::MATH::Vector2& val){ this->m[0] = val.x; this->m[1] = val.y; return *this; }
             EVOLUTION_INLINE Color& operator=(const EVOLUTION::MATH::Vector3& val){ this->m[0] = val.x; this->m[1] = val.y; this->m[2] = val.z; return *this; }
             EVOLUTION_INLINE Color& operator=(const EVOLUTION::MATH::Vector4& val){ this->m[0] = val.x; this->m[1] = val.y; this->m[2] = val.z; this->m[3] = val.w; return *this; }
-            EVOLUTION_INLINE Color& operator=(const EVOLUTION::MATH::Quaternion& val);
+            Color& operator=(const EVOLUTION::MATH::Quaternion& val);
             //*****************************************************************************
             //		関数
             //*****************************************************************************

@@ -1,6 +1,8 @@
 #ifndef __EVOLUTION_MATH_H__
 #define __EVOLUTION_MATH_H__
 
+#include <evolution.h>
+
 //Vector2クラス
 #include "evolution_vector2.h"
 
