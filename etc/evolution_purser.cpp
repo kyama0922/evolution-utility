@@ -25,23 +25,65 @@ const c8* Purser::Search(const c8* key){
         return nullptr;
     }
 
-    c8 search_str[128];
     s32 len = EVOLUTION::FUNCTION::Strlen(key);
-    s32 index = 0;
-    s32 i = 0;
-    while (i < len)
+    const c8* search_key = key;
+    s32 buffer_index = 0;
+    
+    do
     {
-        if (key[i] == '[')
+        if (*search_key == '\\')
         {
-            while (key[i] != ']')
-            {
-                search_str[index++] = key[i];
-            }
-            continue;
-        }
-        search_str[index++] = key[i];
-    }
 
+        }
+        else if (*search_key == '*')
+        {
+
+        }
+        else if (*search_key == '[')
+        {
+            const c8* start = search_key + 1;
+            const c8* end = start;
+            while ( *(end++ + 1) != ']');
+            const c8* work = start;
+            do
+            {
+                if (*work == '-')
+                {
+                    for (c8 c = *(work++ - 1); c <= *work; c++)
+                    {
+                        if (cp_text[m_index] == c)
+                        {
+                            this->mp_buffer[buffer_index++] = cp_text[m_index];
+                            search_key = end+1;
+                            break;
+                        }
+                    }
+                    if (start < search_key)
+                    {
+                        break;
+                    }
+                }
+                else if (cp_text[m_index] == *work)
+                {
+                    this->mp_buffer[buffer_index++] = cp_text[m_index];
+                    search_key = end;
+                    break;
+                }
+            } while (work++ <= end);
+        }
+        else if (*search_key == cp_text[m_index])
+        {
+            this->mp_buffer[buffer_index++] = cp_text[m_index];
+            search_key++;
+        }
+        else
+        {
+            search_key = key;
+            buffer_index = 0;
+        }
+    } while (cp_text[++m_index] != '\0' && *search_key != '\0');
+    this->mp_buffer[buffer_index] = '\0';
+    return this->mp_buffer;
 }
 
 bool  Purser::IsEnd(){
