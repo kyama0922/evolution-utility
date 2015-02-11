@@ -144,6 +144,9 @@
     <ClCompile Include="..\etc\evolution_binary_search_collection.cpp">
       <Filter>ソース ファイル\etc</Filter>
     </ClCompile>
+    <ClCompile Include="..\etc\evolution_purser.cpp">
+      <Filter>ソース ファイル\etc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\evolution_utility.h">
@@ -219,6 +222,9 @@
       <Filter>ヘッダー ファイル\file\zlib</Filter>
     </ClInclude>
     <ClInclude Include="..\etc\evolution_binary_search_collection.h">
+      <Filter>ヘッダー ファイル\etc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\etc\evolution_purser.h">
       <Filter>ヘッダー ファイル\etc</Filter>
     </ClInclude>
   </ItemGroup>

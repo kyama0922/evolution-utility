@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\etc\evolution_binary_search_collection.cpp" />
     <ClCompile Include="..\etc\evolution_collection.cpp" />
+    <ClCompile Include="..\etc\evolution_purser.cpp" />
     <ClCompile Include="..\file\evolution_zip_loader.cpp" />
     <ClCompile Include="..\file\zlib\adler32.c" />
     <ClCompile Include="..\file\zlib\compress.c" />
@@ -56,6 +57,7 @@
     <ClInclude Include="..\etc\evolution_binary_search_collection.h" />
     <ClInclude Include="..\etc\evolution_collection.h" />
     <ClInclude Include="..\etc\evolution_color.h" />
+    <ClInclude Include="..\etc\evolution_purser.h" />
     <ClInclude Include="..\evolution_utility.h" />
     <ClInclude Include="..\file\evolution_zip_loader.h" />
     <ClInclude Include="..\file\zlib\crc32.h" />
