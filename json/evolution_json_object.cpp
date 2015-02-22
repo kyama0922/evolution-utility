@@ -9,17 +9,17 @@ u32 JsonObject::AddRef(){
 }
 
 RESULT JsonObject::QueryInterface(EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IJsonObject))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IJsonObject))
     {
         *ppvObject = static_cast<IJsonObject*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_JsonObject))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_JsonObject))
     {
         *ppvObject = static_cast<JsonObject*>(this);
         this->AddRef();

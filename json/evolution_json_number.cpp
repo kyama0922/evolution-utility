@@ -11,17 +11,17 @@ u32 JsonNumber::AddRef(){
 }
 
 RESULT JsonNumber::QueryInterface(EVOLUTION_IID riid, void **ppvObject){
-    if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     {
         *ppvObject = static_cast<IUnknown *>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IJsonValue))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IJsonValue))
     {
         *ppvObject = static_cast<IJsonValue*>(this);
         this->AddRef();
     }
-    else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_JsonNumber))
+    else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_JsonNumber))
     {
         *ppvObject = static_cast<JsonNumber*>(this);
         this->AddRef();
